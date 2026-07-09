@@ -1,494 +1,245 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GameZone</title>
+<title>GAMEZONE | Platform Game Modern</title>
 
-<style>
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-body{
-background:#070b16;
-color:white;
-}
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-
-/* HEADER */
-
-header{
-height:80px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 6%;
-background:#111827;
-border-bottom:1px solid #273244;
-position:sticky;
-top:0;
-z-index:10;
-}
-
-
-.logo{
-font-size:30px;
-font-weight:800;
-color:#00e5ff;
-}
-
-
-.logo span{
-color:#ffd700;
-}
-
-
-.menu button{
-border:none;
-padding:12px 22px;
-border-radius:10px;
-margin-left:10px;
-cursor:pointer;
-font-weight:bold;
-}
-
-
-.login{
-background:#2563eb;
-color:white;
-}
-
-
-.daftar{
-background:#ffd700;
-}
-
-
-
-/* HERO */
-
-.hero{
-
-height:350px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-background:
-linear-gradient(#0008,#0008),
-url("https://images.unsplash.com/photo-1511512578047-dfb367046420");
-
-background-size:cover;
-
-}
-
-
-.hero h1{
-
-font-size:55px;
-
-}
-
-
-.hero p{
-
-font-size:20px;
-
-color:#ddd;
-
-margin-top:15px;
-
-}
-
-
-
-/* USER PANEL */
-
-
-.user-panel{
-
-margin:30px auto;
-
-width:90%;
-
-background:#111827;
-
-padding:25px;
-
-border-radius:20px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-flex-wrap:wrap;
-
-}
-
-
-
-.username{
-
-font-size:25px;
-
-color:#00e5ff;
-
-}
-
-
-
-.action button{
-
-padding:12px 25px;
-
-border:none;
-
-border-radius:10px;
-
-margin:5px;
-
-cursor:pointer;
-
-font-weight:bold;
-
-}
-
-
-
-.deposit{
-
-background:#22c55e;
-
-color:white;
-
-}
-
-
-.withdraw{
-
-background:#ef4444;
-
-color:white;
-
-}
-
-
-
-
-/* GAME */
-
-
-.container{
-
-width:90%;
-
-margin:auto;
-
-}
-
-
-.title{
-
-font-size:35px;
-
-margin:30px 0;
-
-}
-
-
-
-.games{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(230px,1fr));
-
-gap:25px;
-
-}
-
-
-
-.card{
-
-background:#111827;
-
-border-radius:20px;
-
-padding:20px;
-
-transition:.3s;
-
-border:1px solid #1f2937;
-
-}
-
-
-
-.card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 10px 30px #000;
-
-}
-
-
-
-.image{
-
-height:150px;
-
-border-radius:15px;
-
-background:
-linear-gradient(45deg,#2563eb,#9333ea);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:50px;
-
-}
-
-
-
-.card h3{
-
-margin:15px 0;
-
-}
-
-
-
-.card button{
-
-width:48%;
-
-padding:10px;
-
-border:none;
-
-border-radius:8px;
-
-cursor:pointer;
-
-font-weight:bold;
-
-}
-
-
-
-.main{
-
-background:#2563eb;
-
-color:white;
-
-}
-
-
-
-.demo{
-
-background:#ffd700;
-
-}
-
-
-
-footer{
-
-text-align:center;
-
-padding:30px;
-
-color:#888;
-
-}
-
-
-
-</style>
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
-
 <body>
 
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
 
-<header>
-
-
-<div class="logo">
-
-🎮 <span>GAME</span>ZONE
-
-</div>
-
-
-<div class="menu">
-
-<button class="login">
-Login
-</button>
-
-<button class="daftar">
-Daftar
-</button>
-
-
-</div>
-
-
-</header>
-
-
-
-<section class="hero">
-
-<div>
-
-<h1>
-SELAMAT DATANG
-</h1>
-
-<p>
-Platform Game Buatan Sendiri
-</p>
-
-</div>
-
-</section>
-
-
-
-<section class="user-panel">
-
-
-<div>
-
-<p>Pemain</p>
-
-<h2 class="username">
-
-👤 Username
-
-</h2>
-
-</div>
-
-
-<div class="action">
-
-
-<button class="deposit">
-💰 Deposit
-</button>
-
-
-<button class="withdraw">
-💸 Penarikan
-</button>
-
-
-</div>
-
-
-</section>
-
-
-
+<header class="header">
 
 <div class="container">
 
+<!-- LOGO -->
 
-<h2 class="title">
-🎮 Game Pilihan
-</h2>
+<div class="logo">
 
+<img src="img/logo.png" alt="Logo">
 
-<div class="games">
+<div class="logo-text">
 
+<h2>GAME<span>ZONE</span></h2>
 
+<p>Modern Game Platform</p>
 
-<script>
-
-for(let i=1;i<=10;i++){
-
-document.write(`
-
-<div class="card">
-
-<div class="image">
-🎮
 </div>
 
-<h3>
-Game ${i}
-</h3>
+</div>
 
+<!-- MENU -->
+
+<nav class="navbar">
+
+<ul>
+
+<li><a href="#">Beranda</a></li>
+
+<li><a href="#">Semua Game</a></li>
+
+<li><a href="#">Kategori</a></li>
+
+<li><a href="#">Event</a></li>
+
+<li><a href="#">Bantuan</a></li>
+
+</ul>
+
+</nav>
+
+<!-- LOGIN -->
+
+<div class="header-action">
+
+<button id="loginBtn">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</button>
+
+<button id="registerBtn">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Daftar
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<span class="badge">
+
+Platform Game 2026
+
+</span>
+
+<h1>
+
+Selamat Datang di GAMEZONE
+
+</h1>
 
 <p>
-Game buatan sendiri
+
+Bangun koleksi game Anda sendiri dalam satu platform yang modern,
+cepat, dan nyaman digunakan di desktop maupun mobile.
+
 </p>
 
+<div class="hero-button">
 
-<br>
+<button class="btn-primary">
 
+<i class="fa-solid fa-play"></i>
 
-<button class="main">
-MAIN
+Mulai Bermain
+
 </button>
 
+<button class="btn-secondary">
 
-<button class="demo">
-DEMO
+<i class="fa-solid fa-circle-info"></i>
+
+Pelajari
+
 </button>
 
+</div>
 
 </div>
 
-`);
+</section>
 
-}
+<!-- ========================= -->
+<!-- USER PANEL -->
+<!-- ========================= -->
 
-</script>
+<section class="user-panel">
 
+<div class="container">
 
+<div class="profile-box">
+
+<div class="avatar">
+
+<i class="fa-solid fa-user"></i>
 
 </div>
 
+<div class="profile-info">
+
+<p>Status</p>
+
+<h3 id="username">
+
+Belum Login
+
+</h3>
 
 </div>
 
+</div>
 
+<div class="wallet-box">
 
+<div class="wallet-item">
 
-<footer>
+<h4>Saldo</h4>
 
-© 2026 GameZone - Your Own Game Platform
+<span id="saldo">
 
-</footer>
+Rp 0
 
+</span>
 
+</div>
 
-</body>
-</html>
+<div class="wallet-action">
+
+<button class="deposit">
+
+<i class="fa-solid fa-wallet"></i>
+
+Deposit
+
+</button>
+
+<button class="withdraw">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Penarikan
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SEARCH -->
+<!-- ========================= -->
+
+<section class="search-section">
+
+<div class="container">
+
+<h2>
+
+Cari Game
+
+</h2>
+
+<input
+type="text"
+id="searchGame"
+placeholder="Cari nama game...">
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- BAGIAN GAME DIMULAI PADA TAHAP 1B -->
+<!-- ========================= -->
