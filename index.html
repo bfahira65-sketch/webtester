@@ -1,245 +1,196 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GAMEZONE | Platform Game Modern</title>
-
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<!-- CSS -->
-<link rel="stylesheet" href="css/style.css">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GameZone</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1220;color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 30px;background:#111827;position:sticky;top:0}
+.logo{font-size:28px;font-weight:bold;color:#4fd1ff}.logo span{color:#ffd54a}
+nav a{color:#fff;text-decoration:none;margin:0 10px}
+button{cursor:pointer;border:none;border-radius:8px;padding:10px 16px}
+.hero{padding:70px 20px;text-align:center;background:linear-gradient(135deg,#1e3a8a,#111827)}
+.hero h1{font-size:42px}
+.panel{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#182235;margin:20px;border-radius:12px;flex-wrap:wrap}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:20px}
+.card{background:#182235;border-radius:12px;padding:15px}
+.thumb{height:120px;background:#304ffe;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:40px}
+.actions{display:flex;gap:8px;margin-top:12px}
+.main{background:#2563eb;color:#fff}.demo{background:#ffd54a}
+.modal{display:none;position:fixed;inset:0;background:#0008;align-items:center;justify-content:center}
+.box{background:#1f2937;padding:20px;border-radius:12px;width:320px}
+.box input{width:100%;padding:10px;margin:8px 0}
+</style>
 </head>
-
 <body>
-
-<!-- ========================= -->
-<!-- HEADER -->
-<!-- ========================= -->
-
-<header class="header">
-
-<div class="container">
-
-<!-- LOGO -->
-
-<div class="logo">
-
-<img src="img/logo.png" alt="Logo">
-
-<div class="logo-text">
-
-<h2>GAME<span>ZONE</span></h2>
-
-<p>Modern Game Platform</p>
-
+<header>
+<div class="logo">GAME<span>ZONE</span></div>
+<nav><a href="#">Home</a><a href="#">Games</a></nav>
+<div>
+<button onclick="openModal('login')">Login</button>
+<button onclick="openModal('register')">Daftar</button>
 </div>
-
-</div>
-
-<!-- MENU -->
-
-<nav class="navbar">
-
-<ul>
-
-<li><a href="#">Beranda</a></li>
-
-<li><a href="#">Semua Game</a></li>
-
-<li><a href="#">Kategori</a></li>
-
-<li><a href="#">Event</a></li>
-
-<li><a href="#">Bantuan</a></li>
-
-</ul>
-
-</nav>
-
-<!-- LOGIN -->
-
-<div class="header-action">
-
-<button id="loginBtn">
-
-<i class="fa-solid fa-right-to-bracket"></i>
-
-Login
-
-</button>
-
-<button id="registerBtn">
-
-<i class="fa-solid fa-user-plus"></i>
-
-Daftar
-
-</button>
-
-</div>
-
-</div>
-
 </header>
 
-<!-- ========================= -->
-<!-- HERO -->
-<!-- ========================= -->
-
 <section class="hero">
+<h1>Selamat Datang di GameZone</h1>
+<p>Portal game modern.</p>
+</section>
 
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<span class="badge">
-
-Platform Game 2026
-
-</span>
-
-<h1>
-
-Selamat Datang di GAMEZONE
-
-</h1>
-
-<p>
-
-Bangun koleksi game Anda sendiri dalam satu platform yang modern,
-cepat, dan nyaman digunakan di desktop maupun mobile.
-
-</p>
-
-<div class="hero-button">
-
-<button class="btn-primary">
-
-<i class="fa-solid fa-play"></i>
-
-Mulai Bermain
-
-</button>
-
-<button class="btn-secondary">
-
-<i class="fa-solid fa-circle-info"></i>
-
-Pelajari
-
-</button>
-
+<div class="panel">
+<div><strong>Username:</strong> <span id="user">Belum Login</span></div>
+<div>
+<button style="background:#16a34a;color:#fff">Deposit</button>
+<button style="background:#dc2626;color:#fff">Penarikan</button>
+</div>
 </div>
 
+<section class="games">
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 1</h3>
+<p>Deskripsi game 1</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 1')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 1')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 2</h3>
+<p>Deskripsi game 2</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 2')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 2')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 3</h3>
+<p>Deskripsi game 3</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 3')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 3')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 4</h3>
+<p>Deskripsi game 4</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 4')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 4')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 5</h3>
+<p>Deskripsi game 5</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 5')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 5')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 6</h3>
+<p>Deskripsi game 6</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 6')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 6')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 7</h3>
+<p>Deskripsi game 7</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 7')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 7')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 8</h3>
+<p>Deskripsi game 8</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 8')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 8')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 9</h3>
+<p>Deskripsi game 9</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 9')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 9')">DEMO</button>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">🎮</div>
+<h3>Game 10</h3>
+<p>Deskripsi game 10</p>
+<div class="actions">
+<button class="main" onclick="alert('Main Game 10')">MAIN</button>
+<button class="demo" onclick="alert('Demo Game 10')">DEMO</button>
+</div>
 </div>
 
 </section>
 
-<!-- ========================= -->
-<!-- USER PANEL -->
-<!-- ========================= -->
+<div id="login" class="modal"><div class="box">
+<h2>Login</h2>
+<input id="luser" placeholder="Username">
+<input id="lpass" type="password" placeholder="Password">
+<button onclick="login()">Masuk</button>
+<button onclick="closeModal('login')">Tutup</button>
+</div></div>
 
-<section class="user-panel">
+<div id="register" class="modal"><div class="box">
+<h2>Daftar</h2>
+<input id="ruser" placeholder="Username">
+<input id="rpass" type="password" placeholder="Password">
+<button onclick="register()">Daftar</button>
+<button onclick="closeModal('register')">Tutup</button>
+</div></div>
 
-<div class="container">
+<script>
+function openModal(id){document.getElementById(id).style.display='flex'}
+function closeModal(id){document.getElementById(id).style.display='none'}
 
-<div class="profile-box">
-
-<div class="avatar">
-
-<i class="fa-solid fa-user"></i>
-
-</div>
-
-<div class="profile-info">
-
-<p>Status</p>
-
-<h3 id="username">
-
-Belum Login
-
-</h3>
-
-</div>
-
-</div>
-
-<div class="wallet-box">
-
-<div class="wallet-item">
-
-<h4>Saldo</h4>
-
-<span id="saldo">
-
-Rp 0
-
-</span>
-
-</div>
-
-<div class="wallet-action">
-
-<button class="deposit">
-
-<i class="fa-solid fa-wallet"></i>
-
-Deposit
-
-</button>
-
-<button class="withdraw">
-
-<i class="fa-solid fa-money-bill-transfer"></i>
-
-Penarikan
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- SEARCH -->
-<!-- ========================= -->
-
-<section class="search-section">
-
-<div class="container">
-
-<h2>
-
-Cari Game
-
-</h2>
-
-<input
-type="text"
-id="searchGame"
-placeholder="Cari nama game...">
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- BAGIAN GAME DIMULAI PADA TAHAP 1B -->
-<!-- ========================= -->
+function register(){
+ const u=ruser.value.trim(),p=rpass.value;
+ if(!u||!p){alert('Isi semua');return;}
+ localStorage.setItem('user_'+u,p);
+ alert('Akun berhasil dibuat');
+ closeModal('register');
+}
+function login(){
+ const u=luser.value.trim(),p=lpass.value;
+ if(localStorage.getItem('user_'+u)===p){
+   localStorage.setItem('login',u);
+   document.getElementById('user').textContent=u;
+   alert('Login berhasil');
+   closeModal('login');
+ }else alert('Username atau password salah');
+}
+window.onload=()=>{
+ const u=localStorage.getItem('login');
+ if(u) document.getElementById('user').textContent=u;
+}
+</script>
+</body>
+</html>
