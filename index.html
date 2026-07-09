@@ -1,103 +1,494 @@
-
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Luxury Gaming</title>
+<title>GameZone</title>
 
-<link rel="stylesheet" href="css/style.css">
+<style>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+body{
+background:#070b16;
+color:white;
+}
+
+
+/* HEADER */
+
+header{
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 6%;
+background:#111827;
+border-bottom:1px solid #273244;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+
+.logo{
+font-size:30px;
+font-weight:800;
+color:#00e5ff;
+}
+
+
+.logo span{
+color:#ffd700;
+}
+
+
+.menu button{
+border:none;
+padding:12px 22px;
+border-radius:10px;
+margin-left:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+
+.login{
+background:#2563eb;
+color:white;
+}
+
+
+.daftar{
+background:#ffd700;
+}
+
+
+
+/* HERO */
+
+.hero{
+
+height:350px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+background:
+linear-gradient(#0008,#0008),
+url("https://images.unsplash.com/photo-1511512578047-dfb367046420");
+
+background-size:cover;
+
+}
+
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+
+.hero p{
+
+font-size:20px;
+
+color:#ddd;
+
+margin-top:15px;
+
+}
+
+
+
+/* USER PANEL */
+
+
+.user-panel{
+
+margin:30px auto;
+
+width:90%;
+
+background:#111827;
+
+padding:25px;
+
+border-radius:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.username{
+
+font-size:25px;
+
+color:#00e5ff;
+
+}
+
+
+
+.action button{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:10px;
+
+margin:5px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+
+
+.deposit{
+
+background:#22c55e;
+
+color:white;
+
+}
+
+
+.withdraw{
+
+background:#ef4444;
+
+color:white;
+
+}
+
+
+
+
+/* GAME */
+
+
+.container{
+
+width:90%;
+
+margin:auto;
+
+}
+
+
+.title{
+
+font-size:35px;
+
+margin:30px 0;
+
+}
+
+
+
+.games{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+}
+
+
+
+.card{
+
+background:#111827;
+
+border-radius:20px;
+
+padding:20px;
+
+transition:.3s;
+
+border:1px solid #1f2937;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 10px 30px #000;
+
+}
+
+
+
+.image{
+
+height:150px;
+
+border-radius:15px;
+
+background:
+linear-gradient(45deg,#2563eb,#9333ea);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:50px;
+
+}
+
+
+
+.card h3{
+
+margin:15px 0;
+
+}
+
+
+
+.card button{
+
+width:48%;
+
+padding:10px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+
+
+.main{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+
+
+.demo{
+
+background:#ffd700;
+
+}
+
+
+
+footer{
+
+text-align:center;
+
+padding:30px;
+
+color:#888;
+
+}
+
+
+
+</style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<div class="container">
 
-<img src="images/logo.png" class="logo">
+<div class="logo">
 
-<nav>
-
-<a href="#">Beranda</a>
-
-<a href="#">Promosi</a>
-
-<a href="#">Kontak</a>
-
-<button class="login">Login</button>
-
-<button class="register">Daftar</button>
-
-</nav>
+🎮 <span>GAME</span>ZONE
 
 </div>
+
+
+<div class="menu">
+
+<button class="login">
+Login
+</button>
+
+<button class="daftar">
+Daftar
+</button>
+
+
+</div>
+
 
 </header>
 
+
+
 <section class="hero">
 
-<div class="overlay"></div>
+<div>
 
-<img src="images/banner.jpg" class="banner">
+<h1>
+SELAMAT DATANG
+</h1>
 
-<div class="hero-text">
-
-<h1>WELCOME</h1>
-
-<p>Luxury Gaming Platform</p>
-
-<a href="#" class="btn">Mulai Sekarang</a>
+<p>
+Platform Game Buatan Sendiri
+</p>
 
 </div>
 
 </section>
 
-<section class="features">
 
-<div class="card">
 
-<h2>⚡ Cepat</h2>
+<section class="user-panel">
 
-<p>Tampilan modern dengan performa ringan.</p>
+
+<div>
+
+<p>Pemain</p>
+
+<h2 class="username">
+
+👤 Username
+
+</h2>
+
+</div>
+
+
+<div class="action">
+
+
+<button class="deposit">
+💰 Deposit
+</button>
+
+
+<button class="withdraw">
+💸 Penarikan
+</button>
+
 
 </div>
 
-<div class="card">
-
-<h2>🔒 Aman</h2>
-
-<p>Siap dihubungkan ke sistem autentikasi.</p>
-
-</div>
-
-<div class="card">
-
-<h2>💎 Premium</h2>
-
-<p>Desain elegan warna hitam & gold.</p>
-
-</div>
 
 </section>
+
+
+
+
+<div class="container">
+
+
+<h2 class="title">
+🎮 Game Pilihan
+</h2>
+
+
+<div class="games">
+
+
+
+<script>
+
+for(let i=1;i<=10;i++){
+
+document.write(`
+
+<div class="card">
+
+<div class="image">
+🎮
+</div>
+
+<h3>
+Game ${i}
+</h3>
+
+
+<p>
+Game buatan sendiri
+</p>
+
+
+<br>
+
+
+<button class="main">
+MAIN
+</button>
+
+
+<button class="demo">
+DEMO
+</button>
+
+
+</div>
+
+`);
+
+}
+
+</script>
+
+
+
+</div>
+
+
+</div>
+
+
+
 
 <footer>
 
-<p>© 2026 Luxury Gaming</p>
+© 2026 GameZone - Your Own Game Platform
 
 </footer>
 
-<script src="js/script.js"></script>
+
 
 </body>
-
 </html>
