@@ -22,6 +22,33 @@
 .withdraw-btn{
 
     flex:1;
+    background:#000;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+
+.logout-btn{
+
+    width:100%;
+    margin-top:10px;
+    background:#1b1b1b;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+
+    flex:1;
     height:45px;
 
     background:#000;
@@ -721,20 +748,20 @@ src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 
 
-<!-- Tombol Deposit & Withdraw -->
+<!-- Deposit & Withdraw -->
 <div class="wallet-action">
 
-    <button class="deposit-btn">
+    <button class="deposit-btn" onclick="deposit()">
         💰 Deposit
     </button>
 
-    <button class="withdraw-btn">
+    <button class="withdraw-btn" onclick="withdraw()">
         🏦 Withdraw
     </button>
 
 </div>
 
-<!-- Tombol Keluar -->
+<!-- Keluar Akun -->
 <button class="logout-btn" onclick="logout()">
     🚪 Keluar Akun
 </button>
@@ -1331,7 +1358,29 @@ slider();
 
 
 </script>
+function deposit(){
+    alert("Menu Deposit akan segera tersedia.");
+}
 
+function withdraw(){
+    alert("Menu Withdraw akan segera tersedia.");
+}
+
+function logout(){
+
+    if(confirm("Apakah Anda yakin ingin keluar dari akun?")){
+
+        localStorage.removeItem("username");
+        localStorage.removeItem("password");
+        localStorage.removeItem("email");
+        localStorage.removeItem("saldo");
+        localStorage.removeItem("server");
+
+        location.reload();
+
+    }
+
+}
 <!-- Bottom Navigation -->
 <div class="bottom-nav">
 
