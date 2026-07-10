@@ -1373,3 +1373,379 @@ slider();
 </body>
 
 </html>
+<!-- ===========================
+     E-WALLET
+=========================== -->
+
+<h2 class="section-title">
+📱 E-Wallet
+</h2>
+
+<div class="grid">
+
+<div class="card" onclick="showPayment('dana')">
+
+<div class="left">
+
+<div class="icon">💙</div>
+
+<div>
+
+<div class="bank">DANA</div>
+
+<div class="desc">Pembayaran Instan</div>
+
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</div>
+
+<div class="card" onclick="showPayment('ovo')">
+
+<div class="left">
+
+<div class="icon">💜</div>
+
+<div>
+
+<div class="bank">OVO</div>
+
+<div class="desc">Pembayaran Instan</div>
+
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</div>
+
+<div class="card" onclick="showPayment('gopay')">
+
+<div class="left">
+
+<div class="icon">🟢</div>
+
+<div>
+
+<div class="bank">GoPay</div>
+
+<div class="desc">Pembayaran Instan</div>
+
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</div>
+
+<div class="card" onclick="showPayment('qris')">
+
+<div class="left">
+
+<div class="icon">📷</div>
+
+<div>
+
+<div class="bank">QRIS</div>
+
+<div class="desc">Scan QR Code</div>
+
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</div>
+
+</div>
+
+<!-- ===========================
+     BANK LAINNYA
+=========================== -->
+
+<h2 class="section-title">
+🏛 Bank Lainnya
+</h2>
+
+<div class="grid">
+
+<div class="card" onclick="showPayment('seabank')">
+
+<div class="left">
+
+<div class="icon">🌊</div>
+
+<div>
+
+<div class="bank">SeaBank</div>
+
+<div class="desc">Transfer Bank</div>
+
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</div>
+
+<div class="card" onclick="showPayment('jago')">
+
+<div class="left">
+
+<div class="icon">🟠</div>
+
+<div>
+
+<div class="bank">Bank Jago</div>
+
+<div class="desc">Transfer Bank</div>
+
+</div>
+
+</div>
+
+<div class="arrow">›</div>
+
+</div>
+
+</div>
+
+<!-- ===========================
+DETAIL PEMBAYARAN
+=========================== -->
+
+<div id="paymentBox" class="payment-box">
+
+<h2 id="paymentTitle">
+Metode Pembayaran
+</h2>
+
+<div class="payment-logo">
+
+💳
+
+</div>
+
+<p style="margin-top:15px;color:#bbb;">
+Atas Nama
+</p>
+
+<h3 id="paymentName">
+PT CONTOH INDONESIA
+</h3>
+
+<p style="margin-top:20px;color:#bbb;">
+Nomor Pembayaran
+</p>
+
+<div class="rekening">
+
+<span id="paymentNumber">
+1234567890123
+</span>
+
+<button onclick="copyNumber()">
+Salin
+</button>
+
+</div>
+
+<div id="qrisArea" style="display:none;">
+
+<img
+src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=PaymentCenter"
+style="width:220px;margin-top:20px;border-radius:10px;">
+
+</div>
+
+</div>
+
+<style>
+
+.payment-box{
+
+display:none;
+
+margin-top:25px;
+
+background:#171717;
+
+border:1px solid #d4af37;
+
+border-radius:18px;
+
+padding:25px;
+
+animation:fade .3s;
+
+}
+
+.payment-box h2{
+
+color:#FFD700;
+
+text-align:center;
+
+}
+
+.payment-logo{
+
+font-size:60px;
+
+text-align:center;
+
+margin-top:15px;
+
+}
+
+.rekening{
+
+display:flex;
+
+margin-top:15px;
+
+gap:10px;
+
+}
+
+.rekening span{
+
+flex:1;
+
+background:#222;
+
+padding:14px;
+
+border-radius:10px;
+
+font-size:17px;
+
+}
+
+.rekening button{
+
+background:#FFD700;
+
+color:#000;
+
+border:none;
+
+padding:14px 20px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+.rekening button:hover{
+
+background:#ffcc00;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+<script>
+
+function showPayment(type){
+
+let title="";
+let number="";
+let name="PT CONTOH INDONESIA";
+
+document.getElementById("qrisArea").style.display="none";
+
+switch(type){
+
+case "dana":
+title="DANA";
+number="081234567890";
+break;
+
+case "ovo":
+title="OVO";
+number="081234567891";
+break;
+
+case "gopay":
+title="GoPay";
+number="081234567892";
+break;
+
+case "qris":
+title="QRIS";
+number="-";
+document.getElementById("qrisArea").style.display="block";
+break;
+
+case "seabank":
+title="SeaBank";
+number="9988776655";
+break;
+
+case "jago":
+title="Bank Jago";
+number="1122334455";
+break;
+
+}
+
+document.getElementById("paymentTitle").innerHTML=title;
+document.getElementById("paymentName").innerHTML=name;
+document.getElementById("paymentNumber").innerHTML=number;
+
+document.getElementById("paymentBox").style.display="block";
+
+window.scrollTo({
+
+top:document.getElementById("paymentBox").offsetTop-20,
+
+behavior:"smooth"
+
+});
+
+}
+
+function copyNumber(){
+
+navigator.clipboard.writeText(
+
+document.getElementById("paymentNumber").innerText
+
+);
+
+alert("Nomor berhasil disalin");
+
+}
+
+</script>
