@@ -2,33 +2,33 @@
 <html>
 <head>
 
-<title>Game Lobby</title>
+<title>Game Center</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 <style>
 
 *{
-    box-sizing:border-box;
+box-sizing:border-box;
 }
 
 
 body{
 
-    margin:0;
-    background:#080808;
-    font-family:Arial, sans-serif;
-    color:white;
+margin:0;
+background:#080808;
+font-family:Arial,sans-serif;
+color:white;
 
 }
 
 
+
 .container{
 
-    max-width:1200px;
-    margin:auto;
-    padding:25px;
+max-width:1200px;
+margin:auto;
+padding:20px;
 
 }
 
@@ -38,20 +38,19 @@ body{
 
 .logo-area{
 
-    text-align:center;
-    margin-bottom:30px;
+text-align:center;
+margin-bottom:25px;
 
 }
 
 
 .logo{
 
-    width:200px;
-    max-width:80%;
+width:380px;
+max-width:95%;
+height:auto;
 
 }
-
-
 
 
 
@@ -59,52 +58,51 @@ body{
 
 .game-grid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
 
-    gap:22px;
+gap:20px;
 
 }
 
 
 
-
-/* CARD GAME */
+/* CARD */
 
 .game-card{
 
-    background:#151515;
+background:#151515;
 
-    border-radius:20px;
+border-radius:18px;
 
-    overflow:hidden;
+overflow:hidden;
 
-    border:1px solid #333;
+border:1px solid #333;
 
-    transition:.3s;
+transition:.3s;
 
 }
-
 
 
 .game-card:hover{
 
-    transform:translateY(-5px);
+transform:translateY(-5px);
 
 }
+
 
 
 
 
 .game-image{
 
-    width:100%;
+width:100%;
 
-    height:230px;
+height:220px;
 
-    object-fit:cover;
+object-fit:cover;
 
 }
 
@@ -114,22 +112,21 @@ body{
 
 .game-content{
 
-    padding:20px;
+padding:15px;
 
-    text-align:center;
+text-align:center;
 
 }
 
 
 
-
 .game-title{
 
-    font-size:19px;
+font-size:18px;
 
-    font-weight:bold;
+font-weight:bold;
 
-    min-height:55px;
+min-height:50px;
 
 }
 
@@ -139,74 +136,162 @@ body{
 
 .buttons{
 
-    display:flex;
+display:flex;
 
-    gap:10px;
+gap:8px;
 
-    margin-top:20px;
+margin-top:15px;
 
 }
-
 
 
 
 
 .btn{
 
-    flex:1;
+flex:1;
 
-    padding:12px;
+padding:11px;
 
-    border-radius:12px;
+border-radius:10px;
 
-    text-decoration:none;
+text-decoration:none;
 
-    font-weight:bold;
+font-weight:bold;
 
-    font-size:14px;
+font-size:13px;
 
 }
-
-
 
 
 
 .demo{
 
-    background:#333;
+background:#333;
 
-    color:white;
+color:white;
 
 }
-
-
 
 
 
 .main{
 
-    background:
-    linear-gradient(45deg,#ffd700,#ff9900);
+background:linear-gradient(45deg,#ffd700,#ff9900);
 
-    color:#000;
+color:#000;
 
 }
-
-
 
 
 
 .btn:hover{
 
-    opacity:.8;
+opacity:.8;
 
 }
+
+
+
+
+
+
+/* VERSI HP */
+
+@media(max-width:600px){
+
+
+.container{
+
+padding:12px;
+
+}
+
+
+
+.logo{
+
+width:280px;
+
+}
+
+
+
+.game-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+}
+
+
+
+.game-card{
+
+border-radius:14px;
+
+}
+
+
+
+.game-image{
+
+height:140px;
+
+}
+
+
+
+.game-content{
+
+padding:10px;
+
+}
+
+
+
+.game-title{
+
+font-size:13px;
+
+min-height:42px;
+
+}
+
+
+
+.buttons{
+
+gap:5px;
+
+margin-top:10px;
+
+}
+
+
+
+.btn{
+
+padding:8px 4px;
+
+font-size:11px;
+
+}
+
+
+
+}
+
+
+
 
 
 </style>
 
 
 </head>
+
 
 
 <body>
@@ -219,7 +304,6 @@ body{
 <!-- LOGO -->
 
 <div class="logo-area">
-
 
 <img class="logo"
 
@@ -237,13 +321,10 @@ src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh70uu_a46O5xDU59
 
 
 
-<!-- Gates Of Olympus -->
-
 <div class="game-card">
 
 <img class="game-image"
-src="https://via.placeholder.com/500x500?text=Gates+Of+Olympus">
-
+src="https://via.placeholder.com/500">
 
 <div class="game-content">
 
@@ -255,11 +336,11 @@ Super Scatter
 
 <div class="buttons">
 
-<a href="#" class="btn demo">
+<a class="btn demo" href="#">
 DEMO
 </a>
 
-<a href="#" class="btn main">
+<a class="btn main" href="#">
 MAIN
 </a>
 
@@ -274,14 +355,10 @@ MAIN
 
 
 
-
-<!-- Starlight Princess Super Scatter -->
-
 <div class="game-card">
 
 <img class="game-image"
-src="https://via.placeholder.com/500x500?text=Starlight+Princess+Super">
-
+src="https://via.placeholder.com/500">
 
 <div class="game-content">
 
@@ -293,11 +370,11 @@ Super Scatter
 
 <div class="buttons">
 
-<a href="#" class="btn demo">
+<a class="btn demo" href="#">
 DEMO
 </a>
 
-<a href="#" class="btn main">
+<a class="btn main" href="#">
 MAIN
 </a>
 
@@ -313,13 +390,10 @@ MAIN
 
 
 
-<!-- Fortune Of Olympus -->
-
 <div class="game-card">
 
 <img class="game-image"
-src="https://via.placeholder.com/500x500?text=Fortune+Of+Olympus">
-
+src="https://via.placeholder.com/500">
 
 <div class="game-content">
 
@@ -330,11 +404,11 @@ Fortune Of Olympus
 
 <div class="buttons">
 
-<a href="#" class="btn demo">
+<a class="btn demo" href="#">
 DEMO
 </a>
 
-<a href="#" class="btn main">
+<a class="btn main" href="#">
 MAIN
 </a>
 
@@ -350,13 +424,10 @@ MAIN
 
 
 
-<!-- Starlight Princess -->
-
 <div class="game-card">
 
 <img class="game-image"
-src="https://via.placeholder.com/500x500?text=Starlight+Princess">
-
+src="https://via.placeholder.com/500">
 
 <div class="game-content">
 
@@ -367,11 +438,11 @@ Starlight Princess
 
 <div class="buttons">
 
-<a href="#" class="btn demo">
+<a class="btn demo" href="#">
 DEMO
 </a>
 
-<a href="#" class="btn main">
+<a class="btn main" href="#">
 MAIN
 </a>
 
@@ -380,8 +451,6 @@ MAIN
 </div>
 
 </div>
-
-
 
 
 
