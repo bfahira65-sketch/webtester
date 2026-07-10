@@ -1,38 +1,396 @@
-<h2 class="judul-game">Daftar Game</h2>
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Game Lobby</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+    background:#080808;
+    font-family:Arial, sans-serif;
+    color:white;
+
+}
+
+
+.container{
+
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+
+}
+
+
+
+/* LOGO */
+
+.logo-area{
+
+    text-align:center;
+    margin-bottom:30px;
+
+}
+
+
+.logo{
+
+    width:200px;
+    max-width:80%;
+
+}
+
+
+
+
+
+/* GAME GRID */
+
+.game-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:22px;
+
+}
+
+
+
+
+/* CARD GAME */
+
+.game-card{
+
+    background:#151515;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid #333;
+
+    transition:.3s;
+
+}
+
+
+
+.game-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+.game-image{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+.game-content{
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+
+
+
+.game-title{
+
+    font-size:19px;
+
+    font-weight:bold;
+
+    min-height:55px;
+
+}
+
+
+
+
+
+.buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+.btn{
+
+    flex:1;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+.demo{
+
+    background:#333;
+
+    color:white;
+
+}
+
+
+
+
+
+.main{
+
+    background:
+    linear-gradient(45deg,#ffd700,#ff9900);
+
+    color:#000;
+
+}
+
+
+
+
+
+.btn:hover{
+
+    opacity:.8;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+
+<!-- LOGO -->
+
+<div class="logo-area">
+
+
+<img class="logo"
+
+src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh70uu_a46O5xDU597Xk2AQtUy-blJmbLMJ7AVex_wawPhil47vEqO1EcuJVRCG4Xb_Wwj_prGNhPeNrzyTzoEZWGh_XEhCVks_BRtew3qTfipJtZf3SIMGJwcQVE1NXLb2JFcg7ebshzNoNA4y-qJyYKC6uld2sck6Fd0NqkMpy4Du5oFC3xCX0s3_kAXJ/s1536/ChatGPT%20Image%20Jul%201,%202026,%2005_14_57%20PM.png">
+
+</div>
+
+
+
+
 
 <div class="game-grid">
 
-    <!-- CARD 1 -->
-    <div class="game-card">
-        <img src="https://via.placeholder.com/300x300?text=Sweet+Bonanza" alt="">
-        <h3>Sweet Bonanza</h3>
 
-        <div class="btn-group">
-            <a href="#" class="btn main">MAIN</a>
-            <a href="#" class="btn demo">DEMO</a>
-        </div>
-    </div>
 
-    <!-- CARD 2 -->
-    <div class="game-card">
-        <img src="https://via.placeholder.com/300x300?text=Mahjong+Ways+2" alt="">
-        <h3>Mahjong Ways 2</h3>
 
-        <div class="btn-group">
-            <a href="#" class="btn main">MAIN</a>
-            <a href="#" class="btn demo">DEMO</a>
-        </div>
-    </div>
 
-    <!-- CARD 3 -->
-    <div class="game-card">
-        <img src="https://via.placeholder.com/300x300?text=Gates+of+Olympus" alt="">
-        <h3>Gates of Olympus</h3>
+<!-- Gates Of Olympus -->
 
-        <div class="btn-group">
-            <a href="#" class="btn main">MAIN</a>
-            <a href="#" class="btn demo">DEMO</a>
-        </div>
-    </div>
+<div class="game-card">
+
+<img class="game-image"
+src="https://via.placeholder.com/500x500?text=Gates+Of+Olympus">
+
+
+<div class="game-content">
+
+<div class="game-title">
+Gates Of Olympus<br>
+Super Scatter
+</div>
+
+
+<div class="buttons">
+
+<a href="#" class="btn demo">
+DEMO
+</a>
+
+<a href="#" class="btn main">
+MAIN
+</a>
 
 </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- Starlight Princess Super Scatter -->
+
+<div class="game-card">
+
+<img class="game-image"
+src="https://via.placeholder.com/500x500?text=Starlight+Princess+Super">
+
+
+<div class="game-content">
+
+<div class="game-title">
+Starlight Princess<br>
+Super Scatter
+</div>
+
+
+<div class="buttons">
+
+<a href="#" class="btn demo">
+DEMO
+</a>
+
+<a href="#" class="btn main">
+MAIN
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- Fortune Of Olympus -->
+
+<div class="game-card">
+
+<img class="game-image"
+src="https://via.placeholder.com/500x500?text=Fortune+Of+Olympus">
+
+
+<div class="game-content">
+
+<div class="game-title">
+Fortune Of Olympus
+</div>
+
+
+<div class="buttons">
+
+<a href="#" class="btn demo">
+DEMO
+</a>
+
+<a href="#" class="btn main">
+MAIN
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- Starlight Princess -->
+
+<div class="game-card">
+
+<img class="game-image"
+src="https://via.placeholder.com/500x500?text=Starlight+Princess">
+
+
+<div class="game-content">
+
+<div class="game-title">
+Starlight Princess
+</div>
+
+
+<div class="buttons">
+
+<a href="#" class="btn demo">
+DEMO
+</a>
+
+<a href="#" class="btn main">
+MAIN
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>
