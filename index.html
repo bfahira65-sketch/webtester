@@ -8,82 +8,6 @@
 
 
 <style>
-    /* ========================= */
-/* Deposit & Withdraw */
-/* ========================= */
-
-.wallet-action{
-    display:flex;
-    gap:10px;
-    margin:15px 0;
-}
-
-.deposit-btn,
-.withdraw-btn{
-
-    flex:1;
-    background:#000;
-    color:#fff;
-    border:none;
-    border-radius:10px;
-    padding:12px;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-
-}
-
-.logout-btn{
-
-    width:100%;
-    margin-top:10px;
-    background:#1b1b1b;
-    color:#fff;
-    border:none;
-    border-radius:10px;
-    padding:12px;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-
-}
-
-    flex:1;
-    height:45px;
-
-    background:#000;
-
-    color:#fff;
-
-    border:1px solid #333;
-
-    border-radius:10px;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.deposit-btn:hover{
-
-    background:#FFD700;
-
-    color:#000;
-
-}
-
-.withdraw-btn:hover{
-
-    background:#FFD700;
-
-    color:#000;
-
-}
 /* ===== Running Text Promo ===== */
 
 .promo-bar{
@@ -748,22 +672,10 @@ src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 
 
-<!-- Deposit & Withdraw -->
-<div class="wallet-action">
+<button class="logout" id="logoutBtn">
 
-    <button class="deposit-btn" onclick="deposit()">
-        💰 Deposit
-    </button>
+🚪 KELUAR AKUN
 
-    <button class="withdraw-btn" onclick="withdraw()">
-        🏦 Withdraw
-    </button>
-
-</div>
-
-<!-- Keluar Akun -->
-<button class="logout-btn" onclick="logout()">
-    🚪 Keluar Akun
 </button>
 
 
@@ -1358,29 +1270,7 @@ slider();
 
 
 </script>
-function deposit(){
-    alert("Menu Deposit akan segera tersedia.");
-}
 
-function withdraw(){
-    alert("Menu Withdraw akan segera tersedia.");
-}
-
-function logout(){
-
-    if(confirm("Apakah Anda yakin ingin keluar dari akun?")){
-
-        localStorage.removeItem("username");
-        localStorage.removeItem("password");
-        localStorage.removeItem("email");
-        localStorage.removeItem("saldo");
-        localStorage.removeItem("server");
-
-        location.reload();
-
-    }
-
-}
 <!-- Bottom Navigation -->
 <div class="bottom-nav">
 
