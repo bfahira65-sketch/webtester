@@ -15,21 +15,24 @@ box-sizing:border-box;
 body{
 margin:0;
 background:#080808;
-color:white;
 font-family:Arial,sans-serif;
+color:white;
 }
 
 
 .container{
-max-width:600px;
+
+max-width:1200px;
 margin:auto;
 padding:15px;
+
 }
 
 
+/* LOGIN REGISTER */
+
 .box,
-.profile,
-.ranking{
+.profile{
 
 background:#151515;
 padding:15px;
@@ -40,22 +43,24 @@ text-align:center;
 }
 
 
-
 input,
-select,
-button{
+select{
 
 width:100%;
 padding:12px;
-margin:6px 0;
-border:none;
+margin-bottom:10px;
 border-radius:10px;
+border:none;
 
 }
 
 
 button{
 
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
 background:#ffd700;
 font-weight:bold;
 cursor:pointer;
@@ -63,6 +68,7 @@ cursor:pointer;
 }
 
 
+/* LOGOUT */
 
 .logout{
 
@@ -73,12 +79,13 @@ color:white;
 
 
 
+/* PROFILE */
+
 .profile{
 
 display:none;
 
 }
-
 
 
 .avatar{
@@ -91,34 +98,61 @@ border-radius:50%;
 
 
 
-.logo{
+/* LOGO */
+
+.logo-area{
 
 text-align:center;
-margin:20px;
+margin:20px 0;
 
 }
 
 
-.logo img{
+.logo{
 
-width:330px;
-max-width:90%;
+width:380px;
+max-width:95%;
 
 }
 
 
+
+/* BANNER */
 
 .banner{
 
 background:#a00000;
-padding:15px;
+
+padding:18px;
+
 border-radius:15px;
+
 text-align:center;
+
+font-weight:bold;
+
 margin-bottom:15px;
 
 }
 
 
+
+/* SEARCH */
+
+.search{
+
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+margin-bottom:15px;
+
+}
+
+
+
+
+/* CATEGORY */
 
 .category{
 
@@ -133,18 +167,25 @@ margin-bottom:15px;
 .category span{
 
 background:#222;
+
 padding:10px 15px;
+
 border-radius:20px;
 
 }
 
 
 
+/* GAME */
+
 .game-grid{
 
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:15px;
 
 }
 
@@ -153,16 +194,45 @@ gap:12px;
 .game-card{
 
 background:#151515;
+
 border-radius:15px;
+
 overflow:hidden;
+
+position:relative;
 
 }
 
 
-.game-card img{
+
+.hot{
+
+position:absolute;
+
+top:10px;
+
+left:10px;
+
+background:red;
+
+padding:5px 10px;
+
+border-radius:10px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
+
+
+
+.game-image{
 
 width:100%;
-height:130px;
+
+height:200px;
+
 object-fit:cover;
 
 }
@@ -172,6 +242,7 @@ object-fit:cover;
 .game-content{
 
 padding:12px;
+
 text-align:center;
 
 }
@@ -181,45 +252,107 @@ text-align:center;
 .buttons{
 
 display:flex;
+
 gap:8px;
 
+margin-top:10px;
+
 }
+
 
 
 .btn{
 
 flex:1;
+
 padding:10px;
+
 border-radius:10px;
+
 font-weight:bold;
 
 }
 
 
+
 .demo{
 
 background:#333;
+
 color:white;
 
 }
 
 
+
 .main{
 
 background:#ffd700;
+
 color:black;
 
 }
 
 
 
+/* RANKING */
+
+.ranking{
+
+background:#151515;
+
+padding:15px;
+
+border-radius:15px;
+
+margin-top:20px;
+
+}
+
+
 .rank{
 
 padding:10px;
+
 border-bottom:1px solid #333;
 
 }
 
+
+
+
+@media(max-width:600px){
+
+
+.logo{
+
+width:280px;
+
+}
+
+
+.game-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.game-image{
+
+height:130px;
+
+}
+
+
+.btn{
+
+font-size:11px;
+
+}
+
+
+}
 
 </style>
 
@@ -252,14 +385,24 @@ type="password"
 placeholder="Kata Sandi">
 
 
+
 <button onclick="login()">
+
 MASUK
+
 </button>
 
 
-<p onclick="showRegister()" style="color:#ffd700;cursor:pointer">
 
-Belum punya akun? DAFTAR
+<p>
+
+Belum punya akun?
+
+<a onclick="showRegister()" style="color:#ffd700">
+
+DAFTAR
+
+</a>
 
 </p>
 
@@ -270,8 +413,8 @@ Belum punya akun? DAFTAR
 
 
 
-<!-- REGISTER -->
 
+<!-- REGISTER -->
 
 <div class="box" id="registerBox" style="display:none;">
 
@@ -279,6 +422,7 @@ Belum punya akun? DAFTAR
 <h3>
 📝 PENDAFTARAN PEMAIN
 </h3>
+
 
 
 <input id="regUser"
@@ -301,27 +445,33 @@ placeholder="Alamat Email">
 
 <select id="regServer">
 
+
 <option value="">
-Pilih Server
+Pilih Slot Server
 </option>
+
 
 <option>
 Indonesia
 </option>
 
+
 <option>
 Thailand
 </option>
 
+
 <option>
 Kamboja
 </option>
+
 
 </select>
 
 
 <input id="regPhone"
 placeholder="WA / Nomor Telepon">
+
 
 
 <button onclick="register()">
@@ -331,9 +481,16 @@ BUAT AKUN
 </button>
 
 
-<p onclick="showLogin()" style="color:#ffd700;cursor:pointer">
 
-Kembali LOGIN
+<p>
+
+Sudah punya akun?
+
+<a onclick="showLogin()" style="color:#ffd700">
+
+LOGIN
+
+</a>
 
 </p>
 
@@ -351,22 +508,30 @@ Kembali LOGIN
 
 
 <img class="avatar"
+
 src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 
 <h3>
+
 👤 <span id="playerName"></span>
+
 </h3>
 
 
 <p>
-💰 Saldo : <b>0</b>
+
+💰 Saldo :
+<b>0</b>
+
 </p>
 
 
 <p>
+
 🌐 Server :
 <span id="playerServer"></span>
+
 </p>
 
 
