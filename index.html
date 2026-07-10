@@ -1,78 +1,38 @@
+<h2 class="judul-game">Daftar Game</h2>
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>TOKOBET Template SPA</title>
-<style>
-body{margin:0;font-family:Arial;background:#111;color:#fff}
-.page{display:none;padding:20px}
-.page.active{display:block}
-header{background:#222;padding:15px;text-align:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
-.card{background:#1c1c1c;border-radius:10px;padding:10px}
-.card img{width:100%;height:180px;object-fit:cover;background:#333}
-button{padding:10px;border:0;border-radius:6px;cursor:pointer}
-.main{background:#16a34a;color:#fff}
-.demo{background:#f59e0b;color:#fff}
-nav{position:fixed;bottom:0;left:0;right:0;background:#222;display:flex;justify-content:space-around;padding:10px}
-</style>
-</head>
-<body>
-<header><h2>TOKOBET</h2></header>
+<div class="game-grid">
 
-<div id="login" class="page active">
-<h3>Login</h3>
-<input id="user" placeholder="Username"><br><br>
-<input type="password" placeholder="Password"><br><br>
-<button onclick="showPage('dashboard')">Login</button>
+    <!-- CARD 1 -->
+    <div class="game-card">
+        <img src="https://via.placeholder.com/300x300?text=Sweet+Bonanza" alt="">
+        <h3>Sweet Bonanza</h3>
+
+        <div class="btn-group">
+            <a href="#" class="btn main">MAIN</a>
+            <a href="#" class="btn demo">DEMO</a>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="game-card">
+        <img src="https://via.placeholder.com/300x300?text=Mahjong+Ways+2" alt="">
+        <h3>Mahjong Ways 2</h3>
+
+        <div class="btn-group">
+            <a href="#" class="btn main">MAIN</a>
+            <a href="#" class="btn demo">DEMO</a>
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="game-card">
+        <img src="https://via.placeholder.com/300x300?text=Gates+of+Olympus" alt="">
+        <h3>Gates of Olympus</h3>
+
+        <div class="btn-group">
+            <a href="#" class="btn main">MAIN</a>
+            <a href="#" class="btn demo">DEMO</a>
+        </div>
+    </div>
+
 </div>
-
-<div id="dashboard" class="page">
-<h3>Dashboard</h3>
-<p>Selamat datang, <span id="u"></span></p>
-<button onclick="showPage('games')">Masuk Game</button>
-<button onclick="showPage('deposit')">Deposit</button>
-</div>
-
-<div id="games" class="page">
-<h3>Daftar Game</h3>
-<div class="grid" id="gameGrid"></div>
-</div>
-
-<div id="deposit" class="page">
-<h3>Deposit</h3>
-<p>Silakan edit informasi rekening sesuai kebutuhan.</p>
-</div>
-
-<nav>
-<button onclick="showPage('dashboard')">Home</button>
-<button onclick="showPage('games')">Game</button>
-<button onclick="showPage('deposit')">Deposit</button>
-<button onclick="showPage('login')">Logout</button>
-</nav>
-
-<script>
-function showPage(id){
- document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- if(id==='dashboard'){document.getElementById('u').textContent=document.getElementById('user').value;}
-}
-const games=[
-'Sweet Bonanza','Mahjong Ways 2','Gates of Olympus','Starlight Princess',
-'Sugar Rush','Fortune Tiger','Wild West Gold','Aztec Gems',
-'Game 9','Game 10','Game 11','Game 12'
-];
-const grid=document.getElementById('gameGrid');
-games.forEach(g=>{
- let c=document.createElement('div');
- c.className='card';
- c.innerHTML=`<img alt=""><h4>${g}</h4>
- <button class="main">MAIN</button>
- <button class="demo">DEMO</button>`;
- grid.appendChild(c);
-});
-</script>
-</body>
-</html>
