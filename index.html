@@ -1,197 +1,424 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>GameZone</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0b1220;color:#fff}
-header{display:flex;justify-content:space-between;align-items:center;padding:18px 30px;background:#111827;position:sticky;top:0}
-.logo{font-size:28px;font-weight:bold;color:#4fd1ff}.logo span{color:#ffd54a}
-nav a{color:#fff;text-decoration:none;margin:0 10px}
-button{cursor:pointer;border:none;border-radius:8px;padding:10px 16px}
-.hero{padding:70px 20px;text-align:center;background:linear-gradient(135deg,#1e3a8a,#111827)}
-.hero h1{font-size:42px}
-.panel{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#182235;margin:20px;border-radius:12px;flex-wrap:wrap}
-.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:20px}
-.card{background:#182235;border-radius:12px;padding:15px}
-.thumb{height:120px;background:#304ffe;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:40px}
-.actions{display:flex;gap:8px;margin-top:12px}
-.main{background:#2563eb;color:#fff}.demo{background:#ffd54a}
-.modal{display:none;position:fixed;inset:0;background:#0008;align-items:center;justify-content:center}
-.box{background:#1f2937;padding:20px;border-radius:12px;width:320px}
-.box input{width:100%;padding:10px;margin:8px 0}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Game Launcher</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
+
 <body>
-<header>
-<div class="logo">GAME<span>ZONE</span></div>
-<nav><a href="#">Home</a><a href="#">Games</a></nav>
-<div>
-<button onclick="openModal('login')">Login</button>
-<button onclick="openModal('register')">Daftar</button>
-</div>
-</header>
 
-<section class="hero">
-<h1>Selamat Datang di GameZone</h1>
-<p>Portal game modern.</p>
-</section>
+<!-- Background -->
+<div class="bg"></div>
 
-<div class="panel">
-<div><strong>Username:</strong> <span id="user">Belum Login</span></div>
-<div>
-<button style="background:#16a34a;color:#fff">Deposit</button>
-<button style="background:#dc2626;color:#fff">Penarikan</button>
-</div>
+<!-- Container -->
+<div class="container">
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <div class="brand">
+
+                <h1>GAME PORTAL</h1>
+
+                <span>Modern Launcher</span>
+
+            </div>
+
+        </div>
+
+        <div class="profile">
+
+            <div class="username">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>drak</span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Banner -->
+
+    <section class="banner">
+
+        <img src="img/banner.jpg">
+
+    </section>
+
+    <!-- Saldo -->
+
+    <section class="wallet">
+
+        <p>Saldo</p>
+
+        <h2>Rp 0</h2>
+
+    </section>
+
+    <!-- Button -->
+
+    <section class="action">
+
+        <button class="deposit">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            Deposit
+
+        </button>
+
+        <button class="withdraw">
+
+            <i class="fa-solid fa-money-bill-wave"></i>
+
+            Penarikan
+
+        </button>
+
+    </section>
+
+    <!-- Login -->
+
+    <section class="account">
+
+        <button class="login">
+
+            Login
+
+        </button>
+
+        <button class="register">
+
+            Daftar
+
+        </button>
+
+    </section>
+
+    <!-- Game -->
+
+    <section class="games">
+
+        <h2>Game Populer</h2>
+
+        <div class="game-grid">
+
+            <!-- GAME 1 -->
+            <div class="game-card">
+
+                <img src="img/game1.jpg">
+
+                <h3>Game 1</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 2 -->
+            <div class="game-card">
+
+                <img src="img/game2.jpg">
+
+                <h3>Game 2</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 3 -->
+            <div class="game-card">
+
+                <img src="img/game3.jpg">
+
+                <h3>Game 3</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 4 -->
+            <div class="game-card">
+
+                <img src="img/game4.jpg">
+
+                <h3>Game 4</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 5 -->
+            <div class="game-card">
+
+                <img src="img/game5.jpg">
+
+                <h3>Game 5</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 6 -->
+            <div class="game-card">
+
+                <img src="img/game6.jpg">
+
+                <h3>Game 6</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 7 -->
+            <div class="game-card">
+
+                <img src="img/game7.jpg">
+
+                <h3>Game 7</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 8 -->
+            <div class="game-card">
+
+                <img src="img/game8.jpg">
+
+                <h3>Game 8</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 9 -->
+            <div class="game-card">
+
+                <img src="img/game9.jpg">
+
+                <h3>Game 9</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- GAME 10 -->
+            <div class="game-card">
+
+                <img src="img/game10.jpg">
+
+                <h3>Game 10</h3>
+
+                <div class="btn-game">
+
+                    <button class="demo">
+
+                        Demo
+
+                    </button>
+
+                    <button class="play">
+
+                        Main
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 </div>
 
-<section class="games">
+<!-- Bottom Navigation -->
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 1</h3>
-<p>Deskripsi game 1</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 1')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 1')">DEMO</button>
-</div>
-</div>
+<nav class="bottom-nav">
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 2</h3>
-<p>Deskripsi game 2</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 2')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 2')">DEMO</button>
-</div>
-</div>
+    <a href="#">
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 3</h3>
-<p>Deskripsi game 3</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 3')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 3')">DEMO</button>
-</div>
-</div>
+        <i class="fa-solid fa-house"></i>
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 4</h3>
-<p>Deskripsi game 4</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 4')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 4')">DEMO</button>
-</div>
-</div>
+        <span>Home</span>
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 5</h3>
-<p>Deskripsi game 5</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 5')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 5')">DEMO</button>
-</div>
-</div>
+    </a>
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 6</h3>
-<p>Deskripsi game 6</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 6')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 6')">DEMO</button>
-</div>
-</div>
+    <a href="#">
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 7</h3>
-<p>Deskripsi game 7</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 7')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 7')">DEMO</button>
-</div>
-</div>
+        <i class="fa-solid fa-gamepad"></i>
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 8</h3>
-<p>Deskripsi game 8</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 8')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 8')">DEMO</button>
-</div>
-</div>
+        <span>Game</span>
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 9</h3>
-<p>Deskripsi game 9</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 9')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 9')">DEMO</button>
-</div>
-</div>
+    </a>
 
-<div class="card">
-<div class="thumb">🎮</div>
-<h3>Game 10</h3>
-<p>Deskripsi game 10</p>
-<div class="actions">
-<button class="main" onclick="alert('Main Game 10')">MAIN</button>
-<button class="demo" onclick="alert('Demo Game 10')">DEMO</button>
-</div>
-</div>
+    <a href="#">
 
-</section>
+        <i class="fa-solid fa-wallet"></i>
 
-<div id="login" class="modal"><div class="box">
-<h2>Login</h2>
-<input id="luser" placeholder="Username">
-<input id="lpass" type="password" placeholder="Password">
-<button onclick="login()">Masuk</button>
-<button onclick="closeModal('login')">Tutup</button>
-</div></div>
+        <span>Deposit</span>
 
-<div id="register" class="modal"><div class="box">
-<h2>Daftar</h2>
-<input id="ruser" placeholder="Username">
-<input id="rpass" type="password" placeholder="Password">
-<button onclick="register()">Daftar</button>
-<button onclick="closeModal('register')">Tutup</button>
-</div></div>
+    </a>
 
-<script>
-function openModal(id){document.getElementById(id).style.display='flex'}
-function closeModal(id){document.getElementById(id).style.display='none'}
+    <a href="#">
 
-function register(){
- const u=ruser.value.trim(),p=rpass.value;
- if(!u||!p){alert('Isi semua');return;}
- localStorage.setItem('user_'+u,p);
- alert('Akun berhasil dibuat');
- closeModal('register');
-}
-function login(){
- const u=luser.value.trim(),p=lpass.value;
- if(localStorage.getItem('user_'+u)===p){
-   localStorage.setItem('login',u);
-   document.getElementById('user').textContent=u;
-   alert('Login berhasil');
-   closeModal('login');
- }else alert('Username atau password salah');
-}
-window.onload=()=>{
- const u=localStorage.getItem('login');
- if(u) document.getElementById('user').textContent=u;
-}
-</script>
+        <i class="fa-solid fa-user"></i>
+
+        <span>Akun</span>
+
+    </a>
+
+</nav>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
