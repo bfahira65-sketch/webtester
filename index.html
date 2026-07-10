@@ -6,89 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Bottom Navigation */
 
-.bottom-nav{
-
-position:fixed;
-
-left:0;
-
-right:0;
-
-bottom:0;
-
-height:70px;
-
-background:#121212;
-
-display:flex;
-
-justify-content:space-around;
-
-align-items:center;
-
-border-top:2px solid #FFD700;
-
-z-index:9999;
-
-}
-
-
-.nav-item{
-
-flex:1;
-
-text-align:center;
-
-color:#aaa;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-
-.nav-item:hover{
-
-color:#FFD700;
-
-}
-
-
-.nav-item.active{
-
-color:#FFD700;
-
-}
-
-
-.nav-icon{
-
-font-size:24px;
-
-margin-bottom:3px;
-
-}
-
-
-.nav-text{
-
-font-size:13px;
-
-font-weight:bold;
-
-}
-
-
-/* Agar konten tidak tertutup menu bawah */
-
-body{
-
-padding-bottom:85px;
-
-}
 <style>
 
 *{
@@ -1265,52 +1183,11 @@ setTimeout(slider,4000);
 slider();
 
 
-function home(){
 
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-}
-
-function promo(){
-
-alert("Menu Promosi akan segera tersedia.");
-
-}
-
-function livechat(){
-
-alert("Menu Livechat akan segera tersedia.");
-
-}
 </script>
 
 
-<!-- Bottom Navigation -->
 
-<div class="bottom-nav">
-
-    <div class="nav-item" onclick="promo()">
-        <div class="nav-icon">🎁</div>
-        <div class="nav-text">Promosi</div>
-    </div>
-
-    <div class="nav-item active" onclick="home()">
-        <div class="nav-icon">🏠</div>
-        <div class="nav-text">Home</div>
-    </div>
-
-    <div class="nav-item" onclick="livechat()">
-        <div class="nav-icon">💬</div>
-        <div class="nav-text">Livechat</div>
-    </div>
-
-</div>
 </body>
 
 </html>
