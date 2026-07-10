@@ -2,9 +2,10 @@
 <html>
 <head>
 
-<title>Game Launcher</title>
+<title>Game Launcher Mobile</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <style>
 
@@ -12,19 +13,27 @@
 box-sizing:border-box;
 }
 
+
 body{
+
 margin:0;
 background:#080808;
 font-family:Arial,sans-serif;
 color:white;
+
 }
+
 
 
 .container{
+
 max-width:600px;
 margin:auto;
 padding:15px;
+
 }
+
+
 
 
 .box,
@@ -41,6 +50,7 @@ text-align:center;
 
 
 
+
 input,
 select,
 button{
@@ -48,10 +58,11 @@ button{
 width:100%;
 padding:12px;
 margin:6px 0;
-border:0;
+border:none;
 border-radius:10px;
 
 }
+
 
 
 
@@ -65,6 +76,7 @@ cursor:pointer;
 
 
 
+
 .logout{
 
 background:#d00000;
@@ -74,11 +86,13 @@ color:white;
 
 
 
+
 .profile{
 
 display:none;
 
 }
+
 
 
 
@@ -101,12 +115,14 @@ margin:20px 0;
 }
 
 
+
 .logo img{
 
-width:330px;
+width:350px;
 max-width:90%;
 
 }
+
 
 
 
@@ -125,14 +141,28 @@ margin-bottom:15px;
 
 
 
+.search{
+
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+
+}
+
+
+
+
 .category{
 
 display:flex;
 gap:10px;
 overflow:auto;
-margin-bottom:15px;
+margin:15px 0;
 
 }
+
+
 
 
 .category span{
@@ -157,6 +187,7 @@ gap:12px;
 
 
 
+
 .game-card{
 
 background:#151515;
@@ -167,6 +198,7 @@ overflow:hidden;
 
 
 
+
 .game-card img{
 
 width:100%;
@@ -174,6 +206,7 @@ height:130px;
 object-fit:cover;
 
 }
+
 
 
 
@@ -196,6 +229,7 @@ gap:8px;
 
 
 
+
 .btn{
 
 flex:1;
@@ -206,12 +240,14 @@ font-weight:bold;
 }
 
 
+
 .demo{
 
 background:#333;
 color:white;
 
 }
+
 
 
 .main{
@@ -232,8 +268,8 @@ border-bottom:1px solid #333;
 }
 
 
-
 </style>
+
 
 </head>
 
@@ -251,17 +287,17 @@ border-bottom:1px solid #333;
 
 
 <h3>
+
 🔐 LOGIN PEMAIN
+
 </h3>
 
 
-<input id="loginUser"
-placeholder="Nama Pengguna">
+
+<input id="loginUser" placeholder="Nama Pengguna">
 
 
-<input id="loginPass"
-type="password"
-placeholder="Kata Sandi">
+<input id="loginPass" type="password" placeholder="Kata Sandi">
 
 
 <button id="loginBtn">
@@ -271,8 +307,8 @@ MASUK
 </button>
 
 
-<p id="openRegister"
-style="color:#ffd700;cursor:pointer">
+
+<p id="openRegister" style="color:#ffd700;cursor:pointer">
 
 Belum punya akun? DAFTAR
 
@@ -294,49 +330,53 @@ Belum punya akun? DAFTAR
 
 
 <h3>
+
 📝 PENDAFTARAN PEMAIN
+
 </h3>
 
 
 
-<input id="regUser"
-placeholder="Nama Pengguna">
+<input id="regUser" placeholder="Nama Pengguna">
 
 
-<input id="regPass"
-type="password"
-placeholder="Kata Sandi">
+<input id="regPass" type="password" placeholder="Kata Sandi">
 
 
-<input id="regConfirm"
-type="password"
-placeholder="Konfirmasi Sandi">
+<input id="regConfirm" type="password" placeholder="Konfirmasi Sandi">
 
 
-<input id="regEmail"
-placeholder="Alamat Email">
+<input id="regEmail" placeholder="Alamat Email">
 
 
 <select id="regServer">
 
 
 <option value="">
+
 Pilih Slot Server
+
 </option>
 
 
 <option>
+
 Indonesia
+
 </option>
 
 
 <option>
+
 Thailand
+
 </option>
 
 
 <option>
+
 Kamboja
+
 </option>
 
 
@@ -344,8 +384,7 @@ Kamboja
 
 
 
-<input id="regPhone"
-placeholder="WA / Nomor Telepon">
+<input id="regPhone" placeholder="WA / Nomor Telepon">
 
 
 
@@ -357,13 +396,11 @@ BUAT AKUN
 
 
 
-<p id="backLogin"
-style="color:#ffd700;cursor:pointer">
+<p id="backLogin" style="color:#ffd700;cursor:pointer">
 
 Kembali LOGIN
 
 </p>
-
 
 
 </div>
@@ -376,26 +413,34 @@ Kembali LOGIN
 
 <!-- PROFILE -->
 
+
 <div class="profile" id="profile">
 
 
-<img class="avatar"
-src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+<img class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 
 <h3>
+
 👤 <span id="playerName"></span>
+
 </h3>
 
 
+
 <p>
+
 💰 Saldo : <b>0</b>
+
 </p>
 
 
+
 <p>
+
 🌐 Server :
 <span id="playerServer"></span>
+
 </p>
 
 
@@ -419,11 +464,10 @@ src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 
 
-<!-- BANNER -->
 
 <div class="banner">
 
-📢 BONUS MEMBER BARU
+📢 BANNER PROMO GAME
 
 </div>
 
@@ -431,25 +475,19 @@ src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 
 
-<!-- CATEGORY -->
+<input class="search" placeholder="🔎 Cari Game">
+
+
+
 
 
 <div class="category">
 
-<span>
-🔥 HOT GAME
-</span>
+<span>🔥 HOT GAME</span>
 
+<span>🎰 SLOT</span>
 
-<span>
-🎰 SLOT
-</span>
-
-
-<span>
-⭐ POPULAR
-</span>
-
+<span>⭐ FAVORIT</span>
 
 </div>
 
@@ -457,7 +495,6 @@ src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 
 
-<!-- GAME -->
 
 
 <div class="game-grid">
@@ -468,13 +505,14 @@ src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 <img src="https://via.placeholder.com/500">
 
-
 <div class="game-content">
 
 <b>
+
 🔥 Gates Of Olympus
 <br>
 Super Scatter
+
 </b>
 
 
@@ -500,18 +538,19 @@ MAIN
 
 
 
+
 <div class="game-card">
 
-
 <img src="https://via.placeholder.com/500">
-
 
 <div class="game-content">
 
 <b>
+
 ⭐ Starlight Princess
 <br>
 Super Scatter
+
 </b>
 
 
@@ -541,14 +580,14 @@ MAIN
 
 <div class="game-card">
 
-
 <img src="https://via.placeholder.com/500">
-
 
 <div class="game-content">
 
 <b>
+
 Fortune Of Olympus
+
 </b>
 
 
@@ -566,9 +605,7 @@ MAIN
 
 </div>
 
-
 </div>
-
 
 </div>
 
@@ -580,14 +617,14 @@ MAIN
 
 <div class="game-card">
 
-
 <img src="https://via.placeholder.com/500">
-
 
 <div class="game-content">
 
 <b>
+
 Starlight Princess
+
 </b>
 
 
@@ -605,9 +642,7 @@ MAIN
 
 </div>
 
-
 </div>
-
 
 </div>
 
@@ -629,34 +664,45 @@ MAIN
 
 
 <h3>
+
 🏆 Ranking Pemain
+
 </h3>
 
 
+
 <div class="rank">
+
 🥇 Player Gold
+
 </div>
 
 
 <div class="rank">
+
 🥈 Dragon Player
+
 </div>
 
 
 <div class="rank">
+
 🥉 Master Game
-</div>
-
-
 
 </div>
 
 
 
+</div>
+
+
+
+
 
 
 
 </div>
+
 
 
 
@@ -668,26 +714,39 @@ MAIN
 <script>
 
 
-// Buka Register
+
+
+
+// BUKA REGISTER
+
 
 document.getElementById("openRegister").onclick=function(){
 
+
 document.getElementById("loginBox").style.display="none";
+
 
 document.getElementById("registerBox").style.display="block";
 
+
 };
 
 
 
 
-// Kembali Login
+
+
+// KEMBALI LOGIN
+
 
 document.getElementById("backLogin").onclick=function(){
 
+
 document.getElementById("registerBox").style.display="none";
 
+
 document.getElementById("loginBox").style.display="block";
+
 
 };
 
@@ -696,15 +755,17 @@ document.getElementById("loginBox").style.display="block";
 
 
 
-// DAFTAR
+
+// REGISTER
 
 
 document.getElementById("registerBtn").onclick=function(){
 
 
-let username=document.getElementById("regUser").value;
 
-let password=document.getElementById("regPass").value;
+let user=document.getElementById("regUser").value;
+
+let pass=document.getElementById("regPass").value;
 
 let confirm=document.getElementById("regConfirm").value;
 
@@ -712,47 +773,43 @@ let server=document.getElementById("regServer").value;
 
 
 
-if(username=="" || password=="" || server==""){
+if(user=="" || pass=="" || server==""){
+
 
 alert("Data belum lengkap");
 
+
 return;
+
 
 }
 
 
 
-if(password!==confirm){
+if(pass!==confirm){
 
-alert("Konfirmasi sandi tidak sama");
+
+alert("Konfirmasi password salah");
+
 
 return;
+
 
 }
 
 
 
 
-localStorage.setItem(
-"username",
-username
-);
+localStorage.setItem("username",user);
 
+localStorage.setItem("password",pass);
 
-localStorage.setItem(
-"password",
-password
-);
-
-
-localStorage.setItem(
-"server",
-server
-);
+localStorage.setItem("server",server);
 
 
 
-masukAkun(username,server);
+
+masukAkun(user,server);
 
 
 
@@ -771,30 +828,34 @@ masukAkun(username,server);
 document.getElementById("loginBtn").onclick=function(){
 
 
-let username=document.getElementById("loginUser").value;
 
-let password=document.getElementById("loginPass").value;
+let user=document.getElementById("loginUser").value;
+
+
+let pass=document.getElementById("loginPass").value;
 
 
 
 if(
 
-username === localStorage.getItem("username")
+user===localStorage.getItem("username")
 
 &&
 
-password === localStorage.getItem("password")
+pass===localStorage.getItem("password")
 
 ){
 
 
+
 masukAkun(
 
-username,
+user,
 
 localStorage.getItem("server")
 
 );
+
 
 
 }
@@ -808,6 +869,7 @@ alert("Username atau password salah");
 }
 
 
+
 };
 
 
@@ -817,10 +879,12 @@ alert("Username atau password salah");
 
 
 
-// MASUK AKUN
+
+// FUNGSI MASUK AKUN
 
 
-function masukAkun(username,server){
+function masukAkun(user,server){
+
 
 
 document.getElementById("loginBox").style.display="none";
@@ -833,10 +897,24 @@ document.getElementById("profile").style.display="block";
 
 
 
-document.getElementById("playerName").innerHTML=username;
+document.getElementById("playerName").innerHTML=user;
 
 
 document.getElementById("playerServer").innerHTML=server;
+
+
+
+// SIMPAN STATUS LOGIN
+
+
+localStorage.setItem(
+
+"loginStatus",
+
+"aktif"
+
+);
+
 
 
 }
@@ -849,7 +927,7 @@ document.getElementById("playerServer").innerHTML=server;
 
 
 
-// LOGOUT FIX
+// LOGOUT
 
 
 document.getElementById("logoutBtn").onclick=function(){
@@ -859,24 +937,23 @@ document.getElementById("logoutBtn").onclick=function(){
 document.getElementById("profile").style.display="none";
 
 
-
 document.getElementById("loginBox").style.display="block";
 
 
 
-document.getElementById("registerBox").style.display="none";
+localStorage.removeItem("loginStatus");
 
 
 
 document.getElementById("loginUser").value="";
 
 
-
 document.getElementById("loginPass").value="";
 
 
 
-alert("Berhasil keluar dari akun");
+alert("Berhasil keluar akun");
+
 
 
 };
@@ -884,7 +961,47 @@ alert("Berhasil keluar dari akun");
 
 
 
+
+
+
+
+
+// AUTO LOGIN SAAT REFRESH
+
+
+
+window.onload=function(){
+
+
+
+let status=localStorage.getItem("loginStatus");
+
+
+let user=localStorage.getItem("username");
+
+
+let server=localStorage.getItem("server");
+
+
+
+if(status==="aktif" && user){
+
+
+
+masukAkun(user,server);
+
+
+
+}
+
+
+
+};
+
+
+
 </script>
+
 
 
 </body>
