@@ -51,6 +51,7 @@ text-align:center;
 
 
 
+
 input,
 select,
 button{
@@ -77,6 +78,7 @@ cursor:pointer;
 
 
 
+
 .logout{
 
 background:#d00000;
@@ -87,11 +89,13 @@ color:white;
 
 
 
+
 .profile{
 
 display:none;
 
 }
+
 
 
 
@@ -107,21 +111,31 @@ border-radius:50%;
 
 
 
-.logo{
 
-text-align:center;
+
+/* SLIDER */
+
+.slider{
+
+width:100%;
+overflow:hidden;
+border-radius:15px;
 margin:20px 0;
 
 }
 
 
+.slide{
 
-.logo img{
-
-width:350px;
-max-width:90%;
+width:100%;
+height:220px;
+object-fit:cover;
+display:none;
+border-radius:15px;
 
 }
+
+
 
 
 
@@ -141,6 +155,7 @@ margin-bottom:15px;
 
 
 
+
 .search{
 
 width:100%;
@@ -149,6 +164,8 @@ border-radius:10px;
 border:none;
 
 }
+
+
 
 
 
@@ -177,6 +194,7 @@ border-radius:20px;
 
 
 
+
 .game-grid{
 
 display:grid;
@@ -184,6 +202,8 @@ grid-template-columns:repeat(2,1fr);
 gap:12px;
 
 }
+
+
 
 
 
@@ -199,6 +219,8 @@ overflow:hidden;
 
 
 
+
+
 .game-card img{
 
 width:100%;
@@ -206,6 +228,8 @@ height:130px;
 object-fit:cover;
 
 }
+
+
 
 
 
@@ -220,12 +244,16 @@ text-align:center;
 
 
 
+
+
 .buttons{
 
 display:flex;
 gap:8px;
 
 }
+
+
 
 
 
@@ -241,12 +269,18 @@ font-weight:bold;
 
 
 
+
+
+
 .demo{
 
 background:#333;
 color:white;
 
 }
+
+
+
 
 
 
@@ -260,6 +294,8 @@ color:black;
 
 
 
+
+
 .rank{
 
 padding:10px;
@@ -268,10 +304,40 @@ border-bottom:1px solid #333;
 }
 
 
+
+
+
+
+
+@media(max-width:600px){
+
+
+.slide{
+
+height:160px;
+
+}
+
+
+.game-card img{
+
+height:110px;
+
+}
+
+
+}
+
+
+
+
+
+
 </style>
 
 
 </head>
+
 
 
 <body>
@@ -281,7 +347,11 @@ border-bottom:1px solid #333;
 
 
 
-<!-- LOGIN -->
+
+
+
+<!-- LOGIN PEMAIN -->
+
 
 <div class="box" id="loginBox">
 
@@ -294,10 +364,15 @@ border-bottom:1px solid #333;
 
 
 
-<input id="loginUser" placeholder="Nama Pengguna">
+<input id="loginUser"
+placeholder="Nama Pengguna">
 
 
-<input id="loginPass" type="password" placeholder="Kata Sandi">
+
+<input id="loginPass"
+type="password"
+placeholder="Kata Sandi">
+
 
 
 <button id="loginBtn">
@@ -308,11 +383,14 @@ MASUK
 
 
 
-<p id="openRegister" style="color:#ffd700;cursor:pointer">
+
+<p id="openRegister"
+style="color:#ffd700;cursor:pointer">
 
 Belum punya akun? DAFTAR
 
 </p>
+
 
 
 </div>
@@ -323,7 +401,7 @@ Belum punya akun? DAFTAR
 
 
 
-<!-- REGISTER -->
+<!-- PENDAFTARAN -->
 
 
 <div class="box" id="registerBox" style="display:none;">
@@ -337,16 +415,27 @@ Belum punya akun? DAFTAR
 
 
 
-<input id="regUser" placeholder="Nama Pengguna">
+
+<input id="regUser"
+placeholder="Nama Pengguna">
 
 
-<input id="regPass" type="password" placeholder="Kata Sandi">
+
+<input id="regPass"
+type="password"
+placeholder="Kata Sandi">
 
 
-<input id="regConfirm" type="password" placeholder="Konfirmasi Sandi">
+
+<input id="regConfirm"
+type="password"
+placeholder="Konfirmasi Sandi">
 
 
-<input id="regEmail" placeholder="Alamat Email">
+
+<input id="regEmail"
+placeholder="Alamat Email">
+
 
 
 <select id="regServer">
@@ -359,11 +448,13 @@ Pilih Slot Server
 </option>
 
 
+
 <option>
 
 Indonesia
 
 </option>
+
 
 
 <option>
@@ -373,6 +464,7 @@ Thailand
 </option>
 
 
+
 <option>
 
 Kamboja
@@ -380,11 +472,17 @@ Kamboja
 </option>
 
 
+
 </select>
 
 
 
-<input id="regPhone" placeholder="WA / Nomor Telepon">
+
+
+<input id="regPhone"
+placeholder="WA / Nomor Telepon">
+
+
 
 
 
@@ -396,11 +494,14 @@ BUAT AKUN
 
 
 
-<p id="backLogin" style="color:#ffd700;cursor:pointer">
+
+<p id="backLogin"
+style="color:#ffd700;cursor:pointer">
 
 Kembali LOGIN
 
 </p>
+
 
 
 </div>
@@ -411,13 +512,17 @@ Kembali LOGIN
 
 
 
-<!-- PROFILE -->
+
+<!-- PROFILE PEMAIN -->
 
 
 <div class="profile" id="profile">
 
 
-<img class="avatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+<img class="avatar"
+src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
 
 
 <h3>
@@ -436,12 +541,16 @@ Kembali LOGIN
 
 
 
+
 <p>
 
 🌐 Server :
+
 <span id="playerServer"></span>
 
 </p>
+
+
 
 
 
@@ -454,20 +563,42 @@ Kembali LOGIN
 
 
 </div>
-<!-- LOGO -->
+<!-- SLIDER BANNER -->
 
-<div class="logo">
+<div class="slider">
 
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsz3NFL4hVPxMBSc806PaPzZALba8faaziZAqZzJ3gCTnrYLWDpa5B3JFed5Hz_oeOrn8VEWvaUu6EJ8nYHMDp9elmPz6tAbGR9OtP0KZ2_iIqsKm4plK6Dz7zMfXm0svCS2yiT_CAFlrtpTbO6pROcxieM0i-3W3Lwf-0alA1V4I91PxYT-1s39rcXZ0w/s1847/ChatGPT%20Image%20Jul%201,%202026,%2005_14_50%20PM.png">
+
+<img class="slide"
+src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjsz3NFL4hVPxMBSc806PaPzZALba8faaziZAqZzJ3gCTnrYLWDpa5B3JFed5Hz_oeOrn8VEWvaUu6EJ8nYHMDp9elmPz6tAbGR9OtP0KZ2_iIqsKm4plK6Dz7zMfXm0svCS2yiT_CAFlrtpTbO6pROcxieM0i-3W3Lwf-0alA1V4I91PxYT-1s39rcXZ0w/s1847/ChatGPT%20Image%20Jul%201,%202026,%2005_14_50%20PM.png">
+
+
+<img class="slide"
+src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrtGMWppfKZQ3XBd0YGLhjLykFyysCwMZ44-TnBz1UQWZpuNDXjppiKDhsAspMrK1cdo-239M8Ibg19S4hbRr6sNq9zDd4lM1E_fJzNpV577tGxnbFmEzsh4sSDuvHfw7PYFB0pZyt3qJWfuRO3X96coF1qhYeANXl2srMC47MOI-2C5_8fJk3FMCuCvPV/s1846/ChatGPT%20Image%20Jul%201,%202026,%2005_15_04%20PM.png">
+
+
+<img class="slide"
+src="https://blogger.googleusercontent.com/img/a/AVvXsEjcMsPtVLcHh86ZSA79AprDTO2m-1ZoenycF76OTBDBx22UapEvr0PM2wVBgYAzzHhSr5lgjHiabcYGoOY78c7T6awSA-kbMrI_FPbLH9pBgpBFdBtkgZzlW1-thyQgDU0BrbF4lGvimmkTpCPIRqyXhLKTvir5IlV9soV_3ZXmvrMvZ0cyYNPySvG7Lem7">
+
+
+<img class="slide"
+src="https://blogger.googleusercontent.com/img/a/AVvXsEhZ9UK8rzdlhcFP5GsIeO85xgH3mh4fx4LQO2lWHgPnEttFO70VOHz43XqfuLIGsnsr0cjcXywMZu9OJSdQHXnqV2N9VtQ4CSuDgcEZIvg9Ee1go6jBc8kIQUCojIYeJTRAk-R9iaddLuniJCyYLjecwNlxOfkwcttNdYBSUPA9JqvPP_KUK1HSBdJu6jic">
+
+
+<img class="slide"
+src="https://blogger.googleusercontent.com/img/a/AVvXsEgEGxipgO1fna9PGBkDNI1M7pRDeQaqeUmFtboITKqhmEFFKnIVJmQlyb1Pxi2HtOLj-5suwj7fdZ1qr2xtSDgg_sgUj_6TpCiS8wIBvvfk61uXTgLayyESdUIjccM3cOV6K2ApKFmIjHcMPFKnCLCR8jwMJTLkWfYi5mAd5fPBbKWb4-KymieaL_FNv9rA">
+
 
 </div>
+
+
+
 
 
 
 
 <div class="banner">
 
-📢 BANNER PROMO GAME
+📢 PROMO GAME TERBARU
 
 </div>
 
@@ -475,7 +606,12 @@ Kembali LOGIN
 
 
 
-<input class="search" placeholder="🔎 Cari Game">
+
+
+<input class="search"
+placeholder="🔎 Cari Game">
+
+
 
 
 
@@ -483,11 +619,20 @@ Kembali LOGIN
 
 <div class="category">
 
-<span>🔥 HOT GAME</span>
+<span>
+🔥 HOT GAME
+</span>
 
-<span>🎰 SLOT</span>
 
-<span>⭐ FAVORIT</span>
+<span>
+🎰 SLOT
+</span>
+
+
+<span>
+⭐ FAVORIT
+</span>
+
 
 </div>
 
@@ -501,11 +646,16 @@ Kembali LOGIN
 
 
 
+
+
 <div class="game-card">
+
 
 <img src="https://via.placeholder.com/500">
 
+
 <div class="game-content">
+
 
 <b>
 
@@ -516,23 +666,35 @@ Super Scatter
 </b>
 
 
+
 <div class="buttons">
 
+
 <button class="btn demo">
+
 DEMO
+
 </button>
+
 
 
 <button class="btn main">
+
 MAIN
+
 </button>
 
 
 </div>
 
-</div>
+
 
 </div>
+
+
+</div>
+
+
 
 
 
@@ -541,9 +703,12 @@ MAIN
 
 <div class="game-card">
 
+
 <img src="https://via.placeholder.com/500">
 
+
 <div class="game-content">
+
 
 <b>
 
@@ -554,23 +719,34 @@ Super Scatter
 </b>
 
 
+
 <div class="buttons">
 
+
 <button class="btn demo">
+
 DEMO
+
 </button>
+
 
 
 <button class="btn main">
+
 MAIN
+
 </button>
 
 
 </div>
 
-</div>
+
 
 </div>
+
+
+</div>
+
 
 
 
@@ -580,9 +756,12 @@ MAIN
 
 <div class="game-card">
 
+
 <img src="https://via.placeholder.com/500">
 
+
 <div class="game-content">
+
 
 <b>
 
@@ -591,21 +770,31 @@ Fortune Of Olympus
 </b>
 
 
+
 <div class="buttons">
 
+
 <button class="btn demo">
+
 DEMO
+
 </button>
+
 
 
 <button class="btn main">
+
 MAIN
+
 </button>
 
 
 </div>
 
+
+
 </div>
+
 
 </div>
 
@@ -617,9 +806,12 @@ MAIN
 
 <div class="game-card">
 
+
 <img src="https://via.placeholder.com/500">
 
+
 <div class="game-content">
+
 
 <b>
 
@@ -628,36 +820,46 @@ Starlight Princess
 </b>
 
 
+
 <div class="buttons">
 
+
 <button class="btn demo">
+
 DEMO
+
 </button>
+
 
 
 <button class="btn main">
+
 MAIN
+
 </button>
 
 
 </div>
 
-</div>
-
-</div>
-
-
 
 
 </div>
 
 
+</div>
 
 
 
 
 
-<!-- RANKING -->
+
+</div>
+
+
+
+
+
+
 
 
 <div class="ranking">
@@ -668,7 +870,6 @@ MAIN
 🏆 Ranking Pemain
 
 </h3>
-
 
 
 <div class="rank">
@@ -692,15 +893,6 @@ MAIN
 </div>
 
 
-
-</div>
-
-
-
-
-
-
-
 </div>
 
 
@@ -715,38 +907,26 @@ MAIN
 
 
 
-
-
-// BUKA REGISTER
+// DAFTAR
 
 
 document.getElementById("openRegister").onclick=function(){
 
+loginBox.style.display="none";
 
-document.getElementById("loginBox").style.display="none";
-
-
-document.getElementById("registerBox").style.display="block";
-
+registerBox.style.display="block";
 
 };
 
 
 
-
-
-
-// KEMBALI LOGIN
 
 
 document.getElementById("backLogin").onclick=function(){
 
+registerBox.style.display="none";
 
-document.getElementById("registerBox").style.display="none";
-
-
-document.getElementById("loginBox").style.display="block";
-
+loginBox.style.display="block";
 
 };
 
@@ -754,33 +934,26 @@ document.getElementById("loginBox").style.display="block";
 
 
 
-
-
-// REGISTER
 
 
 document.getElementById("registerBtn").onclick=function(){
 
 
+let user=regUser.value;
 
-let user=document.getElementById("regUser").value;
+let pass=regPass.value;
 
-let pass=document.getElementById("regPass").value;
+let confirm=regConfirm.value;
 
-let confirm=document.getElementById("regConfirm").value;
-
-let server=document.getElementById("regServer").value;
+let server=regServer.value;
 
 
 
 if(user=="" || pass=="" || server==""){
 
-
 alert("Data belum lengkap");
 
-
 return;
-
 
 }
 
@@ -788,29 +961,23 @@ return;
 
 if(pass!==confirm){
 
-
 alert("Konfirmasi password salah");
 
-
 return;
-
 
 }
 
 
 
+localStorage.username=user;
 
-localStorage.setItem("username",user);
+localStorage.password=pass;
 
-localStorage.setItem("password",pass);
-
-localStorage.setItem("server",server);
-
+localStorage.server=server;
 
 
 
 masukAkun(user,server);
-
 
 
 };
@@ -822,37 +989,26 @@ masukAkun(user,server);
 
 
 
-// LOGIN
-
 
 document.getElementById("loginBtn").onclick=function(){
 
 
-
-let user=document.getElementById("loginUser").value;
-
-
-let pass=document.getElementById("loginPass").value;
-
-
-
 if(
 
-user===localStorage.getItem("username")
+loginUser.value==localStorage.username
 
 &&
 
-pass===localStorage.getItem("password")
+loginPass.value==localStorage.password
 
 ){
 
 
-
 masukAkun(
 
-user,
+localStorage.username,
 
-localStorage.getItem("server")
+localStorage.server
 
 );
 
@@ -863,11 +1019,10 @@ localStorage.getItem("server")
 else{
 
 
-alert("Username atau password salah");
+alert("Login gagal");
 
 
 }
-
 
 
 };
@@ -879,42 +1034,25 @@ alert("Username atau password salah");
 
 
 
-
-// FUNGSI MASUK AKUN
-
-
 function masukAkun(user,server){
 
 
+loginBox.style.display="none";
 
-document.getElementById("loginBox").style.display="none";
-
-
-document.getElementById("registerBox").style.display="none";
+registerBox.style.display="none";
 
 
-document.getElementById("profile").style.display="block";
+profile.style.display="block";
 
 
+playerName.innerHTML=user;
 
-document.getElementById("playerName").innerHTML=user;
 
-
-document.getElementById("playerServer").innerHTML=server;
+playerServer.innerHTML=server;
 
 
 
-// SIMPAN STATUS LOGIN
-
-
-localStorage.setItem(
-
-"loginStatus",
-
-"aktif"
-
-);
-
+localStorage.loginStatus="aktif";
 
 
 }
@@ -927,17 +1065,13 @@ localStorage.setItem(
 
 
 
-// LOGOUT
-
-
 document.getElementById("logoutBtn").onclick=function(){
 
 
+profile.style.display="none";
 
-document.getElementById("profile").style.display="none";
 
-
-document.getElementById("loginBox").style.display="block";
+loginBox.style.display="block";
 
 
 
@@ -945,15 +1079,13 @@ localStorage.removeItem("loginStatus");
 
 
 
-document.getElementById("loginUser").value="";
+loginUser.value="";
 
-
-document.getElementById("loginPass").value="";
+loginPass.value="";
 
 
 
 alert("Berhasil keluar akun");
-
 
 
 };
@@ -966,29 +1098,75 @@ alert("Berhasil keluar akun");
 
 
 
-// AUTO LOGIN SAAT REFRESH
-
+// AUTO LOGIN
 
 
 window.onload=function(){
 
 
-
-let status=localStorage.getItem("loginStatus");
-
-
-let user=localStorage.getItem("username");
+if(localStorage.loginStatus=="aktif"){
 
 
-let server=localStorage.getItem("server");
+masukAkun(
+
+localStorage.username,
+
+localStorage.server
+
+);
+
+
+}
+
+
+};
 
 
 
-if(status==="aktif" && user){
 
 
 
-masukAkun(user,server);
+
+
+
+// SLIDER
+
+
+let slideIndex=0;
+
+
+function slider(){
+
+
+let slides=document.getElementsByClassName("slide");
+
+
+
+for(let i=0;i<slides.length;i++){
+
+slides[i].style.display="none";
+
+}
+
+
+
+slideIndex++;
+
+
+
+if(slideIndex>slides.length){
+
+slideIndex=1;
+
+}
+
+
+
+slides[slideIndex-1].style.display="block";
+
+
+
+setTimeout(slider,4000);
 
 
 
@@ -996,7 +1174,7 @@ masukAkun(user,server);
 
 
 
-};
+slider();
 
 
 
