@@ -1,9 +1,56 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demo</title><link rel="stylesheet" href="style.css"></head><body>
-<header><img class="logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh70uu_a46O5xDU597Xk2AQtUy-blJmbLMJ7AVex_wawPhil47vEqO1EcuJVRCG4Xb_Wwj_prGNhPeNrzyTzoEZWGh_XEhCVks_BRtew3qTfipJtZf3SIMGJwcQVE1NXLb2JFcg7ebshzNoNA4y-qJyYKC6uld2sck6Fd0NqkMpy4Du5oFC3xCX0s3_kAXJ/s1536/ChatGPT%20Image%20Jul%201,%202026,%2005_14_57%20PM.png"><div><button>Daftar</button><button>Login</button></div></header>
-<div class="slider">
-<img id="slide" src="">
-</div>
-<main><h2>Promosi</h2><button onclick="alert('Livechat')">Livechat</button><button onclick="alert('Menu')">Menu</button>
-<h3>Tujuan Deposit</h3><div id="banks"></div></main>
-<script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Situs - Daftar & Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img class="logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh70uu_a46O5xDU597Xk2AQtUy-blJmbLMJ7AVex_wawPhil47vEqO1EcuJVRCG4Xb_Wwj_prGNhPeNrzyTzoEZWGh_XEhCVks_BRtew3qTfipJtZf3SIMGJwcQVE1NXLb2JFcg7ebshzNoNA4y-qJyYKC6uld2sck6Fd0NqkMpy4Du5oFC3xCX0s3_kAXJ/s1536/ChatGPT%20Image%20Jul%201,%202026,%2005_14_57%20PM.png" alt="Logo">
+        </div>
+        <nav>
+            <button onclick="showSection('daftar')">Daftar</button>
+            <button onclick="showSection('login')">Login</button>
+        </nav>
+    </header>
+
+    <div class="slider">
+        <img id="slide" src="" alt="Slider Image">
+        <div class="slider-overlay">
+            <h1>Selamat Datang di Platform Terbaik</h1>
+            <p>Promo menarik & Deposit mudah</p>
+        </div>
+    </div>
+
+    <main>
+        <section id="promosi" class="section">
+            <h2>Promosi Terbaru</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <h3>Bonus New Member</h3>
+                    <p>100% hingga Rp 2.000.000</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="actions">
+            <button class="livechat-btn" onclick="openLivechat()">💬 Livechat</button>
+            <button onclick="showMenu()">📋 Menu Lengkap</button>
+        </section>
+
+        <section id="deposit" class="section">
+            <h2>Tujuan Deposit</h2>
+            <div id="banks" class="banks-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Demo Situs. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
