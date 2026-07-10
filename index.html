@@ -905,7 +905,23 @@ document.getElementById("playerServer").innerHTML=server;
 }
 
 
+document.getElementById("logoutBtn").onclick = function(){
 
+    document.getElementById("profile").style.display = "none";
+
+    document.getElementById("loginBox").style.display = "block";
+
+    document.getElementById("registerBox").style.display = "none";
+
+
+    document.getElementById("loginUser").value = "";
+
+    document.getElementById("loginPass").value = "";
+
+
+    alert("Berhasil keluar dari akun");
+
+};
 </script>
 
 
