@@ -8,6 +8,55 @@
 
 
 <style>
+    /* ========================= */
+/* Deposit & Withdraw */
+/* ========================= */
+
+.wallet-action{
+    display:flex;
+    gap:10px;
+    margin:15px 0;
+}
+
+.deposit-btn,
+.withdraw-btn{
+
+    flex:1;
+    height:45px;
+
+    background:#000;
+
+    color:#fff;
+
+    border:1px solid #333;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.deposit-btn:hover{
+
+    background:#FFD700;
+
+    color:#000;
+
+}
+
+.withdraw-btn:hover{
+
+    background:#FFD700;
+
+    color:#000;
+
+}
 /* ===== Running Text Promo ===== */
 
 .promo-bar{
@@ -672,10 +721,22 @@ src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
 
 
-<button class="logout" id="logoutBtn">
+<!-- Tombol Deposit & Withdraw -->
+<div class="wallet-action">
 
-🚪 KELUAR AKUN
+    <button class="deposit-btn">
+        💰 Deposit
+    </button>
 
+    <button class="withdraw-btn">
+        🏦 Withdraw
+    </button>
+
+</div>
+
+<!-- Tombol Keluar -->
+<button class="logout-btn" onclick="logout()">
+    🚪 Keluar Akun
 </button>
 
 
