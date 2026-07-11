@@ -104,10 +104,23 @@ body{
 }
 
 .status{
-    background:#18c964;
-    padding:4px 12px;
+    color:#fff;
+    padding:6px 14px;
     border-radius:20px;
     font-size:12px;
+    font-weight:600;
+}
+
+.online{
+    background:#18c964;
+}
+
+.offline{
+    background:#ff3b30;
+}
+
+.maintenance{
+    background:#ff9500;
 }
 
 .content{
@@ -317,7 +330,9 @@ html+=`
 
 </div>
 
-<div class="status">ONLINE</div>
+<div class="status ${item.status === 'ONLINE' ? 'online' : item.status === 'OFFLINE' ? 'offline' : 'maintenance'}">
+    ${item.status}
+</div>
 
 </div>
 
