@@ -916,10 +916,9 @@ Gates of Olympus
 
 
 
-<button class="btn main">
-
-MAIN
-
+<button class="btn main"
+onclick="mainGame('https://LINK-GAME-ANDA.com')">
+    MAIN
 </button>
 
 
@@ -967,10 +966,9 @@ Starlight Princess
 
 
 
-<button class="btn main">
-
-MAIN
-
+<button class="btn main"
+onclick="mainGame('https://LINK-GAME-ANDA.com')">
+    MAIN
 </button>
 
 
@@ -1018,10 +1016,9 @@ Mahjong Ways
 
 
 
-<button class="btn main">
-
-MAIN
-
+<button class="btn main"
+onclick="mainGame('https://LINK-GAME-ANDA.com')">
+    MAIN
 </button>
 
 
@@ -1068,10 +1065,9 @@ Mahjong Ways 2
 
 
 
-<button class="btn main">
-
-MAIN
-
+<button class="btn main"
+onclick="mainGame('https://LINK-GAME-ANDA.com')">
+    MAIN
 </button>
 
 
@@ -1112,7 +1108,19 @@ MAIN
 
 
 <script>
+function mainGame(link){
 
+    if(localStorage.getItem("isLogin") === "true"){
+
+        window.location.href = link;
+
+    }else{
+
+        alert("❌ Silakan daftar atau login terlebih dahulu.");
+
+    }
+
+}
 
 
 // DAFTAR
