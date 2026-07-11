@@ -104,12 +104,24 @@ body{
 }
 
 .status{
-    background:#18c964;
-    padding:4px 12px;
+    padding:5px 12px;
     border-radius:20px;
+    color:#fff;
     font-size:12px;
+    font-weight:bold;
 }
 
+.status.online{
+    background:#1fb141;
+}
+
+.status.offline{
+    background:#e53935;
+}
+
+.status.maintenance{
+    background:#ff9800;
+}
 .content{
     display:none;
     padding:18px;
@@ -207,7 +219,8 @@ const rekeningBank = [
 name:"BCA",
 logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/1920px-Bank_Central_Asia.svg.png",
 owner:"*****",
-number:"*****"
+number:"*****",
+status:"OFFLINE"
 },
 
 {
@@ -215,6 +228,7 @@ name:"BRI",
 logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bank_BRI_2000.svg/960px-Bank_BRI_2000.svg.png",
 owner:"*****",
 number:"*****"
+status:"OFFLINE"    
 },
 
 {
