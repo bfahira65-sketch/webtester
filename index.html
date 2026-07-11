@@ -207,7 +207,8 @@ const rekeningBank = [
 name:"BCA",
 logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/1920px-Bank_Central_Asia.svg.png",
 owner:"*****",
-number:"*****"
+number:"*****",
+status:"offline"
 },
 
 {
@@ -317,8 +318,8 @@ html+=`
 
 </div>
 
-<div class="status">ONLINE</div>
-
+<div class="status ${item.status ? 'online' : 'offline'}">
+    ${item.status ? 'ONLINE' : 'OFFLINE'}
 </div>
 
 <div class="content" id="${id}${i}">
