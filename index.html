@@ -104,10 +104,23 @@ body{
 }
 
 .status{
-    background:#18c964;
-    padding:4px 12px;
+    padding:5px 12px;
     border-radius:20px;
+    color:#fff;
     font-size:12px;
+    font-weight:600;
+}
+
+.status.online{
+    background:#16c60c;
+}
+
+.status.offline{
+    background:#ff3b30;
+}
+
+.status.maintenance{
+    background:#ff9500;
 }
 
 .content{
@@ -317,7 +330,9 @@ html+=`
 
 </div>
 
-<div class="status">ONLINE</div>
+<div class="status ${item.status.toLowerCase()}">
+    ${item.status}
+</div>
 
 </div>
 
