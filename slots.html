@@ -1,201 +1,94 @@
 <div class="game-grid">
 
-
-
-
-
 <div class="game-card">
-
-
-<img src="https://maingratis.bryanfatburger.com/img/olympus-pragmatic.webp">
-
-
-<div class="game-content">
-
-
-<b>
-
-Gates of Olympus
-
-
-</b>
-
-
-
-<div class="buttons">
-
-
-<button class="btn demo">
-
-<a href="https://d3pr994l7txgml.cloudfront.net/gs2c/openGame.do?extGame=1&amp;gameSymbol=vs20olympgate&amp;lang=ID&amp;cur=IDR&amp;jurisdiction=99" class="demo">
-    DEMO
-</a>
-
-
-
-</button><button class="btn main" onclick="mainGame('https://LINK-GAME-ANDA.com')">
-    MAIN
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="game-card">
-
-
-<img src="https://maingratis.bryanfatburger.com/img/vs20starlightold.webp">
-
-
-<div class="game-content">
-
-
-<b>
-
-Starlight Princess
-
-</b>
-
-
-
-<div class="buttons">
-
-
-<button class="btn demo">
-
-<a href="https://d3pr994l7txgml.cloudfront.net/gs2c/openGame.do?extGame=1&amp;gameSymbol=vs20starlight&amp;lang=ID&amp;cur=IDR&amp;jurisdiction=99" class="demo">
-    DEMO
-</a>
-
-
-
-</button><button class="btn main" onclick="mainGame('https://LINK-GAME-ANDA.com')">
-    MAIN
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="game-card">
-
-
-<img src="https://maingratis.bryanfatburger.com/img/mahjongwaysdemo.webp">
-
-
-<div class="game-content">
-
-
-<b>
-
-Mahjong Ways
-
-</b>
-
-
-
-<div class="buttons">
-
-
-<button class="btn demo">
-
-<a href="https://m.eajzzxhro.com/65/index.html?ot=ca7094186b309ee149c55c8822e7ecf2&amp;l=en&amp;btt=2&amp;or=21novodx%3Dzveuuscmj%3Dxjh&amp;__hv=2fMEQCICuqoNGFMML4fGBdQE%2BkWN6hW4%2FfORGq%2Fnk1ZEMnawwmAiAxGYxJjOCWQZyBSVILpJeMljpfcPHLJNuUZN5itlB12A%3D%3D&amp;__sv=010401YytG6oT6vOl81kKt_NDwR6QjynyruQC7y9kpWiV7QEg" class="demo">
-    DEMO
-</a>
-
-
-
-</button><button class="btn main" onclick="mainGame('https://LINK-GAME-ANDA.com')">
-    MAIN
-</button>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="game-card">
-
 
 <img src="https://maingratis.bryanfatburger.com/img/demoslot-mahjongways2.webp">
 
-
 <div class="game-content">
 
-
-<b>
-
-Mahjong Ways 2
-
-</b>
-
-
+<b>Mahjong Ways 2</b>
 
 <div class="buttons">
 
-
-<button class="btn demo">
-
-<a href="https://m.eajzzxhro.com/74/index.html?ot=ca7094186b309ee149c55c8822e7ecf2&amp;l=en&amp;btt=2&amp;or=21novodx%3Dzveuuscmj%3Dxjh&amp;__hv=2fMEQCICuqoNGFMML4fGBdQE%2BkWN6hW4%2FfORGq%2Fnk1ZEMnawwmAiAxGYxJjOCWQZyBSVILpJeMljpfcPHLJNuUZN5itlB12A%3D%3D&amp;__sv=010401YytG6oT6vOl81kKt_NDwR6QjynyruQC7y9kpWiV7QEg" class="demo">
-    DEMO
+<a href="#" class="btn demo">
+DEMO
 </a>
 
+<button class="btn main"
+onclick="wajibDeposit()">
 
+MAIN
 
-</button><button class="btn main" onclick="mainGame('https://LINK-GAME-ANDA.com')">
-    MAIN
 </button>
 
+</div>
 
 </div>
 
-
-
 </div>
 
-
 </div>
+body{
+    margin:0;
+    background:#000;
+    font-family:Poppins,sans-serif;
+}
 
+.game-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    padding:12px;
+}
 
+.game-card{
+    background:#141414;
+    border-radius:15px;
+    overflow:hidden;
+}
 
+.game-card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    display:block;
+}
 
+.game-content{
+    padding:10px;
+}
 
+.game-content b{
+    display:block;
+    color:#fff;
+    text-align:center;
+    font-size:16px;
+    margin-bottom:10px;
+}
 
-</div>
+.buttons{
+    display:flex;
+    gap:8px;
+}
+
+.btn{
+    flex:1;
+    height:38px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.demo{
+    background:#3b3b3b;
+    color:#fff;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.main{
+    background:#FFD11A;
+}
