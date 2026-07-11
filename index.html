@@ -650,9 +650,66 @@ Kamboja
 placeholder="WA / Nomor Telepon">
 
 
+<input type="text"
+id="namaRekening"
+placeholder="Nama Sesuai Rekening">
 
+<label>Jenis Akun Transaksi</label>
 
+<select id="jenisTransaksi" onchange="ubahTransaksi()">
 
+<option value="">Pilih Jenis</option>
+
+<option value="bank">BANK</option>
+
+<option value="ewallet">E-WALLET</option>
+
+</select>
+<div id="bankBox" style="display:none;">
+
+<select id="bank">
+
+<option>BCA</option>
+
+<option>BRI</option>
+
+<option>BNI</option>
+
+<option>MANDIRI</option>
+
+<option>BANK JAGO</option>
+
+<option>SEABANK</option>
+
+</select>
+
+<input
+type="text"
+placeholder="Nomor Rekening">
+
+</div>
+<div id="ewalletBox" style="display:none;">
+
+<select id="ewallet">
+
+<option>DANA</option>
+
+<option>GOPAY</option>
+
+<option>LINKAJA</option>
+
+<option>OVO</option>
+
+<option>ShopeePay</option>
+
+</select>
+
+<input
+type="text"
+placeholder="Nomor E-Wallet">
+
+</div>
+    
 <button id="registerBtn">
 
 BUAT AKUN
@@ -1327,7 +1384,26 @@ setTimeout(slider,4000);
 
 slider();
 
+function ubahTransaksi(){
 
+let jenis=document.getElementById("jenisTransaksi").value;
+
+document.getElementById("bankBox").style.display="none";
+document.getElementById("ewalletBox").style.display="none";
+
+if(jenis=="bank"){
+
+document.getElementById("bankBox").style.display="block";
+
+}
+
+if(jenis=="ewallet"){
+
+document.getElementById("ewalletBox").style.display="block";
+
+}
+
+}
 
 </script>
 
