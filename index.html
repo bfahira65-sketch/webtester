@@ -1,285 +1,150 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Payment Center</title>
+<title>Pusat Pembayaran</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
 }
 
 body{
-background:#f5f6fa;
-color:#222;
+    background:#0d1117;
+    color:#fff;
+    padding:20px;
 }
 
 .container{
-max-width:500px;
-margin:auto;
-padding:20px;
+    max-width:750px;
+    margin:auto;
 }
-
-/* Header */
 
 .header{
-
-text-align:center;
-margin:20px 0 30px;
-
+    text-align:center;
+    margin-bottom:25px;
 }
 
-.logo{
-
-width:90px;
-height:90px;
-border-radius:20px;
-background:#fff;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:auto;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-}
-
-.logo img{
-
-width:65px;
-
+.header img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#fff;
+    padding:10px;
 }
 
 .header h1{
-
-font-size:28px;
-margin-top:15px;
-
+    margin-top:15px;
+    color:#FFD700;
 }
 
 .header p{
-
-color:#777;
-font-size:14px;
-margin-top:5px;
-
+    color:#bbb;
 }
 
-/* Kategori */
-
-.category{
-
-margin-top:30px;
-margin-bottom:15px;
-font-size:18px;
-font-weight:600;
-
+.notice{
+    background:#161b22;
+    border-left:5px solid gold;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:25px;
 }
 
-/* Card */
-
-.payment{
-
-background:#fff;
-
-border-radius:16px;
-
-padding:15px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-margin-bottom:12px;
-
-cursor:pointer;
-
-transition:.25s;
-
-border:1px solid #ececec;
-
+.section-title{
+    margin:25px 0 15px;
+    color:#FFD700;
 }
 
-.payment:hover{
+.card{
+    background:#161b22;
+    border:1px solid rgba(255,215,0,.2);
+    border-radius:15px;
+    margin-bottom:15px;
+    overflow:hidden;
+}
 
-transform:translateY(-2px);
-
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    cursor:pointer;
 }
 
 .left{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
-.bank-logo{
-
-width:50px;
-
-height:50px;
-
-border-radius:12px;
-
-background:#f3f3f3;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-overflow:hidden;
-
+.logo{
+    width:65px;
+    height:65px;
+    background:#fff;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px;
 }
 
-.bank-logo img{
-
-width:40px;
-
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
-.bank-title{
-
-font-weight:600;
-
+.status{
+    background:#18c964;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
 }
 
-.bank-sub{
-
-font-size:13px;
-
-color:#888;
-
+.content{
+    display:none;
+    padding:18px;
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
-.arrow{
-
-font-size:24px;
-
-color:#999;
-
-}
-
-/* Detail */
-
-.detail{
-
-display:none;
-
-background:#fff;
-
-border-radius:16px;
-
-padding:20px;
-
-margin-top:25px;
-
-border:1px solid #ececec;
-
-}
-
-.detail-logo{
-
-text-align:center;
-
-margin-bottom:15px;
-
-}
-
-.detail-logo img{
-
-width:70px;
-
-}
-
-.detail h2{
-
-text-align:center;
-
-margin-bottom:20px;
-
-}
-
-.label{
-
-font-size:13px;
-
-color:#888;
-
-margin-top:15px;
-
-}
-
-.value{
-
-margin-top:8px;
-
-padding:13px;
-
-background:#f6f6f6;
-
-border-radius:10px;
-
-font-weight:600;
-
+.info{
+    margin:8px 0;
 }
 
 .copy{
-
-width:100%;
-
-margin-top:20px;
-
-padding:14px;
-
-border:none;
-
-background:#111;
-
-color:white;
-
-font-size:15px;
-
-border-radius:10px;
-
-cursor:pointer;
-
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    background:gold;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.copy:hover{
-
-background:#333;
-
+.qris{
+    text-align:center;
 }
 
-@media(max-width:500px){
-
-.container{
-
-padding:15px;
-
+.qris img{
+    width:230px;
+    border-radius:12px;
+    background:#fff;
+    padding:8px;
 }
 
+.footer{
+    margin-top:30px;
+    text-align:center;
+    color:#888;
 }
-
 </style>
-
 </head>
 
 <body>
@@ -287,359 +152,216 @@ padding:15px;
 <div class="container">
 
 <div class="header">
-
-<div class="logo">
-
-<!-- Ganti dengan logo Anda -->
-<img src="https://via.placeholder.com/70">
-
-</div>
-
-<h1>Payment Center</h1>
-
-<p>Pilih metode pembayaran yang tersedia.</p>
-
-</div>
-
-<div class="category">
-Transfer Bank
-</div>
-
-<div class="payment" onclick="showData('BCA','https://via.placeholder.com/80','PT CONTOH INDONESIA','1234567890')">
-
-<div class="left">
-
-<div class="bank-logo">
-
-<img src="https://via.placeholder.com/40">
-
-</div>
-
-<div>
-
-<div class="bank-title">
-Bank BCA
-</div>
-
-<div class="bank-sub">
-Transfer Bank
-</div>
-
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-
-<div class="payment" onclick="showData('BRI','https://via.placeholder.com/80','PT CONTOH INDONESIA','9876543210')">
-
-<div class="left">
-
-<div class="bank-logo">
-
-<img src="https://via.placeholder.com/40">
-
-</div>
-
-<div>
-
-<div class="bank-title">
-Bank BRI
-</div>
-
-<div class="bank-sub">
-Transfer Bank
-</div>
-
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-<!-- =========================
-     TRANSFER BANK
-========================== -->
-
-<div class="payment" onclick="showData('Bank BNI','https://via.placeholder.com/80','TOKO ONLINE','123456789012')">
-
-<div class="left">
-
-<div class="bank-logo">
-<img src="https://via.placeholder.com/40">
-</div>
-
-<div>
-
-<div class="bank-title">
-Bank BNI
-</div>
-
-<div class="bank-sub">
-Transfer Bank
-</div>
-
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-
-<div class="payment" onclick="showData('Bank Mandiri','https://via.placeholder.com/80','TOKO ONLINE','123456789012')">
-
-<div class="left">
-
-<div class="bank-logo">
-<img src="https://via.placeholder.com/40">
-</div>
-
-<div>
-
-<div class="bank-title">
-Bank Mandiri
-</div>
-
-<div class="bank-sub">
-Transfer Bank
-</div>
-
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-
-<div class="payment" onclick="showData('SeaBank','https://via.placeholder.com/80','TOKO ONLINE','123456789012')">
-
-<div class="left">
-
-<div class="bank-logo">
-<img src="https://via.placeholder.com/40">
-</div>
-
-<div>
-
-<div class="bank-title">
-SeaBank
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg">
+<h1>NAMA BISNIS</h1>
+<p>Pusat Pembayaran</p>
 </div>
 
-<div class="bank-sub">
-Transfer Bank
+<div class="notice">
+Silakan pilih metode pembayaran di bawah ini. Pastikan nominal transfer sesuai tagihan, lalu simpan bukti pembayaran.
 </div>
 
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-
-<div class="payment" onclick="showData('Bank Jago','https://via.placeholder.com/80','TOKO ONLINE','123456789012')">
-
-<div class="left">
-
-<div class="bank-logo">
-<img src="https://via.placeholder.com/40">
-</div>
-
-<div>
-
-<div class="bank-title">
-Bank Jago
-</div>
-
-<div class="bank-sub">
-Transfer Bank
-</div>
-
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-
-<h2 class="category">
-E-Wallet
-</h2>
-
-<div class="payment" onclick="showData('DANA','https://via.placeholder.com/80','TOKO ONLINE','081234567890')">
-
-<div class="left">
-
-<div class="bank-logo">
-<img src="https://via.placeholder.com/40">
-</div>
-
-<div>
-
-<div class="bank-title">
-DANA
-</div>
-
-<div class="bank-sub">
-E-Wallet
-</div>
-
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-
-<div class="payment" onclick="showData('OVO','https://via.placeholder.com/80','TOKO ONLINE','081234567891')">
-
-<div class="left">
-
-<div class="bank-logo">
-<img src="https://via.placeholder.com/40">
-</div>
-
-<div>
-
-<div class="bank-title">
-OVO
-</div>
-
-<div class="bank-sub">
-E-Wallet
-</div>
-
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-
-<div class="payment" onclick="showData('GoPay','https://via.placeholder.com/80','TOKO ONLINE','081234567892')">
-
-<div class="left">
-
-<div class="bank-logo">
-<img src="https://via.placeholder.com/40">
-</div>
-
-<div>
-
-<div class="bank-title">
-GoPay
-</div>
-
-<div class="bank-sub">
-E-Wallet
-</div>
-
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</div>
-
-<div class="payment" onclick="showData('QRIS','https://via.placeholder.com/120','TOKO ONLINE','QRIS')">
-
-<div class="left">
-
-<div class="bank-logo">
-<img src="https://via.placeholder.com/40">
-</div>
+<h2 class="section-title">🏦 Rekening Bank</h2>
 
-<div>
+<div id="bank"></div>
 
-<div class="bank-title">
-QRIS
-</div>
+<h2 class="section-title">🏦 Bank Digital</h2>
 
-<div class="bank-sub">
-Scan QR Code
-</div>
+<div id="digital"></div>
 
-</div>
+<h2 class="section-title">💳 E-Wallet</h2>
 
-</div>
+<div id="ewallet"></div>
 
-<div class="arrow">›</div>
+<h2 class="section-title">📱 QRIS</h2>
 
-</div>
+<div class="card">
+<div class="content" style="display:block">
+<div class="qris">
 
-<div class="detail" id="detail">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_QRIS.svg/330px-Logo_QRIS.svg.png" width="140">
 
-<div class="detail-logo">
-<img id="logoDetail" src="">
-</div>
+<br><br>
 
-<h2 id="namaBank">
-Bank
-</h2>
+<img src="LINK_QRIS_ANDA.png" width="250">
 
-<div class="label">
-Atas Nama
 </div>
-
-<div class="value" id="atasNama">
-TOKO ONLINE
+<p style="margin-top:15px">Scan menggunakan aplikasi pembayaran Anda.</p>
 </div>
-
-<div class="label">
-Nomor Pembayaran
 </div>
-
-<div class="value" id="nomorRekening">
-123456789
 </div>
-
-<button class="copy" onclick="copyRekening()">
-Salin Nomor
-</button>
 
+<div class="footer">
+© 2026 NAMA BISNIS<br>
+Pembayaran Aman • Cepat • Terpercaya
 </div>
 
 </div>
 
 <script>
 
-function showData(bank,logo,nama,nomor){
+const rekeningBank = [
 
-document.getElementById("detail").style.display="block";
+{
+name:"BCA",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/1920px-Bank_Central_Asia.svg.png",
+owner:"PT NAMA BISNIS",
+number:"1234567890"
+},
 
-document.getElementById("namaBank").innerHTML=bank;
+{
+name:"BRI",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bank_BRI_2000.svg/960px-Bank_BRI_2000.svg.png",
+owner:"PT NAMA BISNIS",
+number:"1234567890"
+},
 
-document.getElementById("logoDetail").src=logo;
+{
+name:"BNI",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Bank_Negara_Indonesia_logo_%282004%29.svg/500px-Bank_Negara_Indonesia_logo_%282004%29.svg.png",
+owner:"PT NAMA BISNIS",
+number:"1234567890"
+},
 
-document.getElementById("atasNama").innerHTML=nama;
+{
+name:"Mandiri",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/500px-Bank_Mandiri_logo_2016.svg.png",
+owner:"PT NAMA BISNIS",
+number:"1234567890"
+}
 
-document.getElementById("nomorRekening").innerHTML=nomor;
+];
 
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
+const bankDigital=[
+
+{
+name:"SeaBank",
+logo:"https://iconlogovector.com/uploads/images/2024/03/lg-65e38a526d27d-SeaBank.webp",
+owner:"PT NAMA BISNIS",
+number:"1234567890"
+},
+
+{
+name:"Bank Jago",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Logo-jago.svg/250px-Logo-jago.svg.png",
+owner:"PT NAMA BISNIS",
+number:"1234567890"
+}
+
+];
+
+const ewallet=[
+
+{
+name:"DANA",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/1280px-Logo_dana_blue.svg.png",
+owner:"NAMA BISNIS",
+number:"081234567890"
+},
+
+{
+name:"OVO",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/1280px-Logo_ovo_purple.svg.png",
+owner:"NAMA BISNIS",
+number:"081234567890"
+},
+
+{
+name:"GoPay",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Gopay_logo.svg/250px-Gopay_logo.svg.png",
+owner:"NAMA BISNIS",
+number:"081234567890"
+},
+
+{
+name:"ShopeePay",
+logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1920px-Shopee.svg.png",
+owner:"NAMA BISNIS",
+number:"081234567890"
+},
+
+{
+name:"LinkAja",
+logo:"https://vectorez.biz.id/wp-content/uploads/2023/12/Logo-Link-Aja-1.png",
+owner:"NAMA BISNIS",
+number:"081234567890"
+}
+
+];
+
+function render(data,id){
+
+let html="";
+
+data.forEach((item,i)=>{
+
+html+=`
+<div class="card">
+
+<div class="card-header" onclick="toggle('${id}${i}')">
+
+<div class="left">
+
+<div class="logo">
+    <img src="${item.logo}">
+</div>
+
+<div>
+
+<b>${item.name}</b><br>
+
+<small>Klik untuk melihat detail</small>
+
+</div>
+
+</div>
+
+<div class="status">ONLINE</div>
+
+</div>
+
+<div class="content" id="${id}${i}">
+
+<div class="info"><b>Nama :</b><br>${item.owner}</div>
+
+<div class="info"><b>Nomor :</b><br><span id="copy${id}${i}">${item.number}</span></div>
+
+<button class="copy" onclick="copyText('copy${id}${i}')">
+
+Salin Nomor
+
+</button>
+
+</div>
+
+</div>
+`;
+
 });
 
-}
-
-function copyRekening(){
-
-const nomor=document.getElementById("nomorRekening").innerText;
-
-navigator.clipboard.writeText(nomor);
-
-alert("Nomor pembayaran berhasil disalin.");
+document.getElementById(id).innerHTML=html;
 
 }
+
+function toggle(id){
+
+let el=document.getElementById(id);
+
+el.style.display=el.style.display==="block"?"none":"block";
+
+}
+
+function copyText(id){
+
+navigator.clipboard.writeText(document.getElementById(id).innerText);
+
+alert("Nomor berhasil disalin.");
+
+}
+
+render(rekeningBank,"bank");
+render(bankDigital,"digital");
+render(ewallet,"ewallet");
 
 </script>
 
