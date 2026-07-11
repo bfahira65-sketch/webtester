@@ -330,10 +330,8 @@ html+=`
 
 </div>
 
-<div class="status ${item.status === 'ONLINE' ? 'online' : item.status === 'OFFLINE' ? 'offline' : 'maintenance'}">
-    ${item.status}
-</div>
-
+<div class="status ${item.status ? item.status.toLowerCase() : 'online'}">
+    ${item.status || 'ONLINE'}
 </div>
 
 <div class="content" id="${id}${i}">
